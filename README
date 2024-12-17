@@ -4,24 +4,24 @@ A state-machine-based game implemented in SystemVerilog and deployed on the Basy
 The game mimics the classic Dino Run where the player controls a dinosaur to jump or duck obstacles.
 
 🎯 Goals
-	•	Implement a state machine to control game behavior.
-	•	Connect and integrate multiple modules:
-	•	Random Number Generator
-	•	Edge Detector
-	•	VGA Timer
-	•	Score Counter
-	•	7-Segment Display Driver
-	•	Display game visuals using the VGA output.
+	• Implement a state machine to control game behavior.
+	• Connect and integrate multiple modules:
+	• Random Number Generator
+	• Edge Detector
+	• VGA Timer
+	• Score Counter
+	• 7-Segment Display Driver
+	• Display game visuals using the VGA output.
 
 📋 Table of Contents
-	1.	Project Overview
-	2.	Features
-	3.	Hardware Requirements
-	4.	Setup Instructions
-	5.	Code Structure
-	6.	State Machine
-	7.	Testing and Simulation
-	8.	Resources
+	1. Project Overview
+	2. Features
+	3. Hardware Requirements
+	4. Setup Instructions
+	5. Code Structure
+	6. State Machine
+	7. Testing and Simulation
+	8. Resources
 
 🚀 Project Overview
 
@@ -30,34 +30,28 @@ VGA display to avoid obstacles like cacti and birds. Game events include jumping
 and game-over detection.
 
 Gameplay:
-	1.	Start Game: Press btnC to start the game.
-	2.	Jump: Press btnU to make the dino jump.
-	3.	Duck: Press btnD to make the dino duck.
-	4.	Reset: Press btnR to reset the game.
+	1. Start Game: Press btnC to start the game.
+	2. Jump: Press btnU to make the dino jump.
+	3. Duck: Press btnD to make the dino duck.
+	4. Reset: Press btnR to reset the game.
 
 The game features:
-	•	Animated dino with jump/duck states.
-	•	Randomly spawning obstacles (cacti and birds).
-	•	Score counter that increments over time.
-	•	Title screen and collision handling.
+	• Animated dino with jump/duck states.
+	• Randomly spawning obstacles (cacti and birds).
+	• Score counter that increments over time.
+	• Title screen and collision handling.
 
 🌟 Features
-	•	Title Screen: Static title image displayed before the game starts.
-	•	Obstacle Management: Random spawn intervals using a 16-bit LFSR.
-	•	State Machine: Ensures smooth transitions between game states:
-	•	Title Screen
-	•	Running
-	•	Collision
-	•	Reset
-	•	Visuals: VGA display output for:
-	•	Dino
-	•	Obstacles
-	•	Score display (7-segment output).
+	• Title Screen: Static title image displayed before the game starts.
+	• Obstacle Management: Random spawn intervals using a 16-bit LFSR.
+	• State Machine: Ensures smooth transitions between game states:
+	• Visuals: VGA display output
+	• Score display (7-segment output).
 
 🛠️ Hardware Requirements
-	•	Basys3 FPGA Board (Xilinx Artix-7)
-	•	Vivado Design Suite for synthesis and simulation
-	•	VGA-compatible display
+	• Basys3 FPGA Board (Xilinx Artix-7)
+	• Vivado Design Suite for synthesis and simulation
+	• VGA-compatible display
 
 📁 Code Structure
 # all the files I worked on
@@ -86,9 +80,9 @@ dino-run/
     COLLISION --> RUNNING : start_i
 
 States
-	1.	TITLE_SCREEN: Display title. Await start_i signal. User can make the dino jump and duck while waiting 
-                    for start_i.
-	2.	RUNNING: Dino moves, obstacles spawn and move from right to left of screen, and score increases. The
-               player remains in PLAYING until a dino pixel hits an object pixel.
-	3.	HIT: Dino flashes for 1 second; game stops and all objects freeze.
-	4.	RESET: Return to TITLE_SCREEN after reset signals.
+	1. TITLE_SCREEN: Display title. Await start_i signal. User can make the dino jump and duck while waiting 
+                         for start_i.
+	2. RUNNING: Dino moves, obstacles spawn and move from right to left of screen, and score increases. The
+                    player remains in PLAYING until a dino pixel hits an object pixel.
+	3. HIT: Dino flashes for 1 second; game stops and all objects freeze.
+	4. RESET: Return to TITLE_SCREEN after reset signals.
