@@ -1,0 +1,94 @@
+🦖 Dino Run
+
+A state-machine-based game implemented in SystemVerilog and deployed on the Basys3 FPGA Board. 
+The game mimics the classic Dino Run where the player controls a dinosaur to jump or duck obstacles.
+
+🎯 Goals
+	•	Implement a state machine to control game behavior.
+	•	Connect and integrate multiple modules:
+	•	Random Number Generator
+	•	Edge Detector
+	•	VGA Timer
+	•	Score Counter
+	•	7-Segment Display Driver
+	•	Display game visuals using the VGA output.
+
+📋 Table of Contents
+	1.	Project Overview
+	2.	Features
+	3.	Hardware Requirements
+	4.	Setup Instructions
+	5.	Code Structure
+	6.	State Machine
+	7.	Testing and Simulation
+	8.	Resources
+
+🚀 Project Overview
+
+Dino Run is a SystemVerilog-based game for the Basys3 FPGA. The player controls a dinosaur on the 
+VGA display to avoid obstacles like cacti and birds. Game events include jumping, ducking, scoring, 
+and game-over detection.
+
+Gameplay:
+	1.	Start Game: Press btnC to start the game.
+	2.	Jump: Press btnU to make the dino jump.
+	3.	Duck: Press btnD to make the dino duck.
+	4.	Reset: Press btnR to reset the game.
+
+The game features:
+	•	Animated dino with jump/duck states.
+	•	Randomly spawning obstacles (cacti and birds).
+	•	Score counter that increments over time.
+	•	Title screen and collision handling.
+
+🌟 Features
+	•	Title Screen: Static title image displayed before the game starts.
+	•	Obstacle Management: Random spawn intervals using a 16-bit LFSR.
+	•	State Machine: Ensures smooth transitions between game states:
+	•	Title Screen
+	•	Running
+	•	Collision
+	•	Reset
+	•	Visuals: VGA display output for:
+	•	Dino
+	•	Obstacles
+	•	Score display (7-segment output).
+
+🛠️ Hardware Requirements
+	•	Basys3 FPGA Board (Xilinx Artix-7)
+	•	Vivado Design Suite for synthesis and simulation
+	•	VGA-compatible display
+
+📁 Code Structure
+# all the files I worked on
+dino-run/
+├── rtl/                       # SystemVerilog RTL files
+│   ├── dinorun_pkg.sv         # State definitions
+│   ├── dinorun.sv             # Top-level Dino Run module
+│   ├── lfsr16.sv              # 16-bit LFSR RNG
+│   ├── vga_timer.sv           # VGA Timer
+│   ├── objects/               # Game objects
+│   │   ├── title.sv
+│   │   └── cactus.sv
+│   └── basys3/
+│       ├── basys3_7seg_driver.sv
+│       └── hex7seg.sv
+├── synth/                     # Basys3 constraints
+│   └── Basys3_Master.xdc
+├── sim/                       # Testbenches
+└── README.md                  # Project documentation
+
+🔄 State Machine
+    [*] --> TITLE_SCREEN
+    TITLE_SCREEN --> RUNNING : start_i
+    RUNNING --> COLLISION : Collision Detected
+    COLLISION --> TITLE_SCREEN : Reset (up_i or down_i)
+    COLLISION --> RUNNING : start_i
+
+States
+	1.	TITLE_SCREEN: Display title. Await start_i signal. User can make the dino jump and duck while waiting 
+                    for start_i.
+	2.	RUNNING: Dino moves, obstacles spawn and move from right to left of screen, and score increases. The
+               player remains in PLAYING until a dino pixel hits an object pixel.
+	3.	HIT: Dino flashes for 1 second; game stops and all objects freeze.
+	4.	RESET: Return to TITLE_SCREEN after reset signals.
