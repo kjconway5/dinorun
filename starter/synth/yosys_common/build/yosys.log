@@ -1,0 +1,2190 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2024  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.47+86 (git sha1 b89bd027a, clang++ 18.1.8 -fPIC -O3)
+
+-- Running command `tcl synth/yosys_common/yosys.tcl' --
+[TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `exec' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `read' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `trace' -> skip.
+
+1. Executing Verilog-2005 frontend: synth/yosys_common/build/rtl.sv2v.v
+Parsing SystemVerilog input from `synth/yosys_common/build/rtl.sv2v.v' to AST representation.
+Generating RTLIL representation for module `\bird'.
+Generating RTLIL representation for module `\cactus'.
+Generating RTLIL representation for module `\dino'.
+Generating RTLIL representation for module `\title'.
+Generating RTLIL representation for module `\edge_detector'.
+Generating RTLIL representation for module `\vga_timer'.
+Generating RTLIL representation for module `\score_counter'.
+Generating RTLIL representation for module `\lfsr16'.
+Generating RTLIL representation for module `\synchronizer'.
+Generating RTLIL representation for module `\basys3_7seg_driver'.
+Generating RTLIL representation for module `\hex7seg'.
+Generating RTLIL representation for module `\clk_100M_to_clk_1k'.
+Generating RTLIL representation for module `\dinorun'.
+Successfully finished Verilog frontend.
+
+2. Executing PREP pass.
+
+2.1. Executing HIERARCHY pass (managing design hierarchy).
+Warning: Resizing cell port dinorun.vga_timer.position_y_o from 10 bits to 9 bits.
+
+2.2. Executing PROC pass (convert processes to netlists).
+
+2.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:888$526'.
+Found and cleaned up 1 empty switch in `\dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:844$522'.
+Found and cleaned up 1 empty switch in `\basys3_7seg_driver.$proc$synth/yosys_common/build/rtl.sv2v.v:602$280'.
+Found and cleaned up 1 empty switch in `\synchronizer.$proc$synth/yosys_common/build/rtl.sv2v.v:532$267'.
+Found and cleaned up 1 empty switch in `\score_counter.$proc$synth/yosys_common/build/rtl.sv2v.v:455$250'.
+Removing empty process `title.$proc$synth/yosys_common/build/rtl.sv2v.v:0$207'.
+Found and cleaned up 1 empty switch in `\title.$proc$synth/yosys_common/build/rtl.sv2v.v:340$201'.
+Removing empty process `dino.$proc$synth/yosys_common/build/rtl.sv2v.v:0$186'.
+Removing empty process `dino.$proc$synth/yosys_common/build/rtl.sv2v.v:0$185'.
+Removing empty process `dino.$proc$synth/yosys_common/build/rtl.sv2v.v:0$184'.
+Removing empty process `dino.$proc$synth/yosys_common/build/rtl.sv2v.v:0$183'.
+Removing empty process `dino.$proc$synth/yosys_common/build/rtl.sv2v.v:0$182'.
+Removing empty process `dino.$proc$synth/yosys_common/build/rtl.sv2v.v:0$181'.
+Found and cleaned up 1 empty switch in `\dino.$proc$synth/yosys_common/build/rtl.sv2v.v:295$130'.
+Found and cleaned up 1 empty switch in `\dino.$proc$synth/yosys_common/build/rtl.sv2v.v:274$110'.
+Found and cleaned up 1 empty switch in `\dino.$proc$synth/yosys_common/build/rtl.sv2v.v:262$105'.
+Removing empty process `cactus.$proc$synth/yosys_common/build/rtl.sv2v.v:0$95'.
+Removing empty process `cactus.$proc$synth/yosys_common/build/rtl.sv2v.v:0$94'.
+Removing empty process `cactus.$proc$synth/yosys_common/build/rtl.sv2v.v:0$93'.
+Removing empty process `cactus.$proc$synth/yosys_common/build/rtl.sv2v.v:0$92'.
+Found and cleaned up 1 empty switch in `\cactus.$proc$synth/yosys_common/build/rtl.sv2v.v:181$67'.
+Found and cleaned up 1 empty switch in `\cactus.$proc$synth/yosys_common/build/rtl.sv2v.v:162$51'.
+Removing empty process `bird.$proc$synth/yosys_common/build/rtl.sv2v.v:0$42'.
+Removing empty process `bird.$proc$synth/yosys_common/build/rtl.sv2v.v:0$41'.
+Found and cleaned up 1 empty switch in `\bird.$proc$synth/yosys_common/build/rtl.sv2v.v:98$28'.
+Found and cleaned up 1 empty switch in `\bird.$proc$synth/yosys_common/build/rtl.sv2v.v:71$11'.
+Found and cleaned up 1 empty switch in `\bird.$proc$synth/yosys_common/build/rtl.sv2v.v:55$6'.
+Cleaned up 14 empty switches.
+
+2.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 5 switch rules as full_case in process $proc$synth/yosys_common/build/rtl.sv2v.v:888$526 in module dinorun.
+Removed 1 dead cases from process $proc$synth/yosys_common/build/rtl.sv2v.v:844$522 in module dinorun.
+Marked 6 switch rules as full_case in process $proc$synth/yosys_common/build/rtl.sv2v.v:844$522 in module dinorun.
+Marked 1 switch rules as full_case in process $proc$synth/yosys_common/build/rtl.sv2v.v:728$497 in module dinorun.
+Removed 1 dead cases from process $proc$synth/yosys_common/build/rtl.sv2v.v:602$280 in module basys3_7seg_driver.
+Marked 1 switch rules as full_case in process $proc$synth/yosys_common/build/rtl.sv2v.v:602$280 in module basys3_7seg_driver.
+Marked 1 switch rules as full_case in process $proc$synth/yosys_common/build/rtl.sv2v.v:580$275 in module basys3_7seg_driver.
+Marked 4 switch rules as full_case in process $proc$synth/yosys_common/build/rtl.sv2v.v:532$267 in module synchronizer.
+Marked 1 switch rules as full_case in process $proc$synth/yosys_common/build/rtl.sv2v.v:505$263 in module lfsr16.
+Marked 1 switch rules as full_case in process $proc$synth/yosys_common/build/rtl.sv2v.v:475$258 in module score_counter.
+Marked 3 switch rules as full_case in process $proc$synth/yosys_common/build/rtl.sv2v.v:455$250 in module score_counter.
+Marked 1 switch rules as full_case in process $proc$synth/yosys_common/build/rtl.sv2v.v:416$240 in module vga_timer.
+Marked 1 switch rules as full_case in process $proc$synth/yosys_common/build/rtl.sv2v.v:340$201 in module title.
+Marked 6 switch rules as full_case in process $proc$synth/yosys_common/build/rtl.sv2v.v:295$130 in module dino.
+Marked 3 switch rules as full_case in process $proc$synth/yosys_common/build/rtl.sv2v.v:274$110 in module dino.
+Marked 1 switch rules as full_case in process $proc$synth/yosys_common/build/rtl.sv2v.v:262$105 in module dino.
+Marked 1 switch rules as full_case in process $proc$synth/yosys_common/build/rtl.sv2v.v:249$103 in module dino.
+Removed 1 dead cases from process $proc$synth/yosys_common/build/rtl.sv2v.v:181$67 in module cactus.
+Marked 1 switch rules as full_case in process $proc$synth/yosys_common/build/rtl.sv2v.v:181$67 in module cactus.
+Marked 3 switch rules as full_case in process $proc$synth/yosys_common/build/rtl.sv2v.v:162$51 in module cactus.
+Marked 1 switch rules as full_case in process $proc$synth/yosys_common/build/rtl.sv2v.v:150$48 in module cactus.
+Removed 1 dead cases from process $proc$synth/yosys_common/build/rtl.sv2v.v:98$28 in module bird.
+Marked 1 switch rules as full_case in process $proc$synth/yosys_common/build/rtl.sv2v.v:98$28 in module bird.
+Removed 1 dead cases from process $proc$synth/yosys_common/build/rtl.sv2v.v:71$11 in module bird.
+Marked 3 switch rules as full_case in process $proc$synth/yosys_common/build/rtl.sv2v.v:71$11 in module bird.
+Marked 2 switch rules as full_case in process $proc$synth/yosys_common/build/rtl.sv2v.v:55$6 in module bird.
+Marked 1 switch rules as full_case in process $proc$synth/yosys_common/build/rtl.sv2v.v:42$4 in module bird.
+Removed a total of 5 dead cases.
+
+2.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 11 redundant assignments.
+Promoted 74 assignments to connections.
+
+2.2.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\clk_100M_to_clk_1k.$proc$synth/yosys_common/build/rtl.sv2v.v:675$493'.
+  Set init value: \counter_q = 18'000000000000000000
+
+2.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~55 debug messages>
+
+2.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:0$534'.
+Creating decoders for process `\dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:907$531'.
+Creating decoders for process `\dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:888$526'.
+     1/13: { $5\vga_red_d[3:0] $5\vga_green_d[3:0] $5\vga_blue_d[3:0] }
+     2/13: $4\vga_green_d[3:0]
+     3/13: $4\vga_blue_d[3:0]
+     4/13: $4\vga_red_d[3:0]
+     5/13: $3\vga_green_d[3:0]
+     6/13: $3\vga_blue_d[3:0]
+     7/13: $3\vga_red_d[3:0]
+     8/13: $2\vga_green_d[3:0]
+     9/13: $2\vga_blue_d[3:0]
+    10/13: $2\vga_red_d[3:0]
+    11/13: $1\vga_green_d[3:0]
+    12/13: $1\vga_blue_d[3:0]
+    13/13: $1\vga_red_d[3:0]
+Creating decoders for process `\dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:844$522'.
+     1/13: $3\reset_objects_n[0:0]
+     2/13: $7\state_d[1:0]
+     3/13: $2\reset_objects_n[0:0]
+     4/13: $6\state_d[1:0]
+     5/13: $5\state_d[1:0]
+     6/13: $4\state_d[1:0]
+     7/13: $3\flashing_timer_d[7:0]
+     8/13: $2\flashing_timer_d[7:0]
+     9/13: $3\state_d[1:0]
+    10/13: $2\state_d[1:0]
+    11/13: $1\state_d[1:0]
+    12/13: $1\reset_objects_n[0:0]
+    13/13: $1\flashing_timer_d[7:0]
+Creating decoders for process `\dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:757$501'.
+Creating decoders for process `\dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:728$497'.
+     1/2: $0\flashing_timer_q[7:0]
+     2/2: $0\state_q[1:0]
+Creating decoders for process `\clk_100M_to_clk_1k.$proc$synth/yosys_common/build/rtl.sv2v.v:675$493'.
+Creating decoders for process `\clk_100M_to_clk_1k.$proc$synth/yosys_common/build/rtl.sv2v.v:682$492'.
+Creating decoders for process `\clk_100M_to_clk_1k.$proc$synth/yosys_common/build/rtl.sv2v.v:677$490'.
+Creating decoders for process `\basys3_7seg_driver.$proc$synth/yosys_common/build/rtl.sv2v.v:0$285'.
+Creating decoders for process `\basys3_7seg_driver.$proc$synth/yosys_common/build/rtl.sv2v.v:602$280'.
+     1/6: $1\anode_o[3:0] [2]
+     2/6: $1\anode_o[3:0] [1]
+     3/6: $1\anode_o[3:0] [3]
+     4/6: $1\segments_en[0:0]
+     5/6: $1\current_digit[3:0]
+     6/6: $1\anode_o[3:0] [0]
+Creating decoders for process `\basys3_7seg_driver.$proc$synth/yosys_common/build/rtl.sv2v.v:580$275'.
+     1/1: $0\counter_q[1:0]
+Creating decoders for process `\synchronizer.$proc$synth/yosys_common/build/rtl.sv2v.v:0$273'.
+Creating decoders for process `\synchronizer.$proc$synth/yosys_common/build/rtl.sv2v.v:543$272'.
+Creating decoders for process `\synchronizer.$proc$synth/yosys_common/build/rtl.sv2v.v:532$267'.
+     1/4: $4\sync_data_d[3:3]
+     2/4: $3\sync_data_d[2:2]
+     3/4: $2\sync_data_d[1:1]
+     4/4: $1\sync_data_d[0:0]
+Creating decoders for process `\lfsr16.$proc$synth/yosys_common/build/rtl.sv2v.v:505$263'.
+     1/1: $0\rand_q[15:0]
+Creating decoders for process `\score_counter.$proc$synth/yosys_common/build/rtl.sv2v.v:0$260'.
+Creating decoders for process `\score_counter.$proc$synth/yosys_common/build/rtl.sv2v.v:475$258'.
+     1/4: $0\digit3_q[3:0]
+     2/4: $0\digit2_q[3:0]
+     3/4: $0\digit1_q[3:0]
+     4/4: $0\digit0_q[3:0]
+Creating decoders for process `\score_counter.$proc$synth/yosys_common/build/rtl.sv2v.v:455$250'.
+     1/6: $1\digit3_d[3:0]
+     2/6: $2\digit2_d[3:0]
+     3/6: $1\digit2_d[3:0]
+     4/6: $2\digit1_d[3:0]
+     5/6: $1\digit1_d[3:0]
+     6/6: $1\digit0_d[3:0]
+Creating decoders for process `\vga_timer.$proc$synth/yosys_common/build/rtl.sv2v.v:0$246'.
+Creating decoders for process `\vga_timer.$proc$synth/yosys_common/build/rtl.sv2v.v:0$242'.
+Creating decoders for process `\vga_timer.$proc$synth/yosys_common/build/rtl.sv2v.v:416$240'.
+     1/2: $0\y_counter_q[9:0]
+     2/2: $0\x_counter_q[9:0]
+Creating decoders for process `\edge_detector.$proc$synth/yosys_common/build/rtl.sv2v.v:362$211'.
+Creating decoders for process `\title.$proc$synth/yosys_common/build/rtl.sv2v.v:0$208'.
+Creating decoders for process `\title.$proc$synth/yosys_common/build/rtl.sv2v.v:340$201'.
+     1/2: $1\pixel_o[0:0]
+     2/2: $1$mem2bits$\TITLE_MEM$synth/yosys_common/build/rtl.sv2v.v:345$188[46:0]$203
+Creating decoders for process `\dino.$proc$synth/yosys_common/build/rtl.sv2v.v:0$187'.
+Creating decoders for process `\dino.$proc$synth/yosys_common/build/rtl.sv2v.v:295$130'.
+     1/31: $6\pixel_o[0:0]
+     2/31: $5$mem2bits$\DINO_LEFT$synth/yosys_common/build/rtl.sv2v.v:311$101[57:0]$169
+     3/31: $5$mem2bits$\DINO_RIGHT$synth/yosys_common/build/rtl.sv2v.v:313$102[57:0]$170
+     4/31: $5\pixel_o[0:0]
+     5/31: $5$mem2bits$\DINO_DOWNLEFT$synth/yosys_common/build/rtl.sv2v.v:306$99[57:0]$163
+     6/31: $5$mem2bits$\DINO_DOWNRIGHT$synth/yosys_common/build/rtl.sv2v.v:308$100[57:0]$164
+     7/31: $4$mem2bits$\DINO_DOWNRIGHT$synth/yosys_common/build/rtl.sv2v.v:308$100[57:0]$160
+     8/31: $4$mem2bits$\DINO_DOWNLEFT$synth/yosys_common/build/rtl.sv2v.v:306$99[57:0]$159
+     9/31: $4\pixel_o[0:0]
+    10/31: $4$mem2bits$\DINO_RIGHT$synth/yosys_common/build/rtl.sv2v.v:313$102[57:0]$162
+    11/31: $4$mem2bits$\DINO_LEFT$synth/yosys_common/build/rtl.sv2v.v:311$101[57:0]$161
+    12/31: $3\pixel_o[0:0]
+    13/31: $3$mem2bits$\DINO_STANDING$synth/yosys_common/build/rtl.sv2v.v:303$98[57:0]$152
+    14/31: $3$mem2bits$\DINO_RIGHT$synth/yosys_common/build/rtl.sv2v.v:313$102[57:0]$156
+    15/31: $3$mem2bits$\DINO_LEFT$synth/yosys_common/build/rtl.sv2v.v:311$101[57:0]$155
+    16/31: $3$mem2bits$\DINO_DOWNRIGHT$synth/yosys_common/build/rtl.sv2v.v:308$100[57:0]$154
+    17/31: $3$mem2bits$\DINO_DOWNLEFT$synth/yosys_common/build/rtl.sv2v.v:306$99[57:0]$153
+    18/31: $2\pixel_o[0:0]
+    19/31: $2$mem2bits$\DINO_HIT$synth/yosys_common/build/rtl.sv2v.v:301$97[57:0]$143
+    20/31: $2$mem2bits$\DINO_RIGHT$synth/yosys_common/build/rtl.sv2v.v:313$102[57:0]$148
+    21/31: $2$mem2bits$\DINO_LEFT$synth/yosys_common/build/rtl.sv2v.v:311$101[57:0]$147
+    22/31: $2$mem2bits$\DINO_DOWNRIGHT$synth/yosys_common/build/rtl.sv2v.v:308$100[57:0]$146
+    23/31: $2$mem2bits$\DINO_DOWNLEFT$synth/yosys_common/build/rtl.sv2v.v:306$99[57:0]$145
+    24/31: $2$mem2bits$\DINO_STANDING$synth/yosys_common/build/rtl.sv2v.v:303$98[57:0]$144
+    25/31: $1$mem2bits$\DINO_RIGHT$synth/yosys_common/build/rtl.sv2v.v:313$102[57:0]$142
+    26/31: $1$mem2bits$\DINO_LEFT$synth/yosys_common/build/rtl.sv2v.v:311$101[57:0]$141
+    27/31: $1$mem2bits$\DINO_DOWNRIGHT$synth/yosys_common/build/rtl.sv2v.v:308$100[57:0]$140
+    28/31: $1$mem2bits$\DINO_DOWNLEFT$synth/yosys_common/build/rtl.sv2v.v:306$99[57:0]$139
+    29/31: $1$mem2bits$\DINO_STANDING$synth/yosys_common/build/rtl.sv2v.v:303$98[57:0]$138
+    30/31: $1$mem2bits$\DINO_HIT$synth/yosys_common/build/rtl.sv2v.v:301$97[57:0]$137
+    31/31: $1\pixel_o[0:0]
+Creating decoders for process `\dino.$proc$synth/yosys_common/build/rtl.sv2v.v:274$110'.
+     1/5: $3\dino_yv_d[10:0]
+     2/5: $2\dino_yp_d[10:0]
+     3/5: $2\dino_yv_d[10:0]
+     4/5: $1\dino_yv_d[10:0]
+     5/5: $1\dino_yp_d[10:0]
+Creating decoders for process `\dino.$proc$synth/yosys_common/build/rtl.sv2v.v:262$105'.
+     1/2: $1\dino_left_d[0:0]
+     2/2: $1\dino_step_counter_d[7:0]
+Creating decoders for process `\dino.$proc$synth/yosys_common/build/rtl.sv2v.v:249$103'.
+     1/4: $0\dino_left_q[0:0]
+     2/4: $0\dino_step_counter_q[7:0]
+     3/4: $0\dino_yv_q[10:0]
+     4/4: $0\dino_yp_q[10:0]
+Creating decoders for process `\cactus.$proc$synth/yosys_common/build/rtl.sv2v.v:0$96'.
+Creating decoders for process `\cactus.$proc$synth/yosys_common/build/rtl.sv2v.v:181$67'.
+     1/10: $2\pixel_o[0:0]
+     2/10: $2$mem2bits$\CACTUS0$synth/yosys_common/build/rtl.sv2v.v:188$44[14:0]$76
+     3/10: $2$mem2bits$\CACTUS3$synth/yosys_common/build/rtl.sv2v.v:191$47[14:0]$79
+     4/10: $2$mem2bits$\CACTUS2$synth/yosys_common/build/rtl.sv2v.v:190$46[14:0]$78
+     5/10: $2$mem2bits$\CACTUS1$synth/yosys_common/build/rtl.sv2v.v:189$45[14:0]$77
+     6/10: $1$mem2bits$\CACTUS3$synth/yosys_common/build/rtl.sv2v.v:191$47[14:0]$75
+     7/10: $1$mem2bits$\CACTUS2$synth/yosys_common/build/rtl.sv2v.v:190$46[14:0]$74
+     8/10: $1$mem2bits$\CACTUS1$synth/yosys_common/build/rtl.sv2v.v:189$45[14:0]$73
+     9/10: $1$mem2bits$\CACTUS0$synth/yosys_common/build/rtl.sv2v.v:188$44[14:0]$72
+    10/10: $1\pixel_o[0:0]
+Creating decoders for process `\cactus.$proc$synth/yosys_common/build/rtl.sv2v.v:162$51'.
+     1/6: $3\cactus_image_d[1:0]
+     2/6: $3\cactus_x_d[10:0]
+     3/6: $2\cactus_x_d[10:0]
+     4/6: $2\cactus_image_d[1:0]
+     5/6: $1\cactus_image_d[1:0]
+     6/6: $1\cactus_x_d[10:0]
+Creating decoders for process `\cactus.$proc$synth/yosys_common/build/rtl.sv2v.v:150$48'.
+     1/2: $0\cactus_image_q[1:0]
+     2/2: $0\cactus_x_q[10:0]
+Creating decoders for process `\bird.$proc$synth/yosys_common/build/rtl.sv2v.v:0$43'.
+Creating decoders for process `\bird.$proc$synth/yosys_common/build/rtl.sv2v.v:98$28'.
+     1/6: $2\pixel_o[0:0]
+     2/6: $2$mem2bits$\BIRD_DOWN$synth/yosys_common/build/rtl.sv2v.v:105$2[20:0]$33
+     3/6: $2$mem2bits$\BIRD_UP$synth/yosys_common/build/rtl.sv2v.v:106$3[20:0]$34
+     4/6: $1$mem2bits$\BIRD_UP$synth/yosys_common/build/rtl.sv2v.v:106$3[20:0]$32
+     5/6: $1$mem2bits$\BIRD_DOWN$synth/yosys_common/build/rtl.sv2v.v:105$2[20:0]$31
+     6/6: $1\pixel_o[0:0]
+Creating decoders for process `\bird.$proc$synth/yosys_common/build/rtl.sv2v.v:71$11'.
+     1/7: $4\bird_y_d[10:0]
+     2/7: $3\bird_y_d[10:0]
+     3/7: $3\bird_x_d[10:0]
+     4/7: $2\bird_x_d[10:0]
+     5/7: $2\bird_y_d[10:0]
+     6/7: $1\bird_y_d[10:0]
+     7/7: $1\bird_x_d[10:0]
+Creating decoders for process `\bird.$proc$synth/yosys_common/build/rtl.sv2v.v:55$6'.
+     1/4: $2\bird_flap_up_d[0:0]
+     2/4: $2\bird_flap_counter_d[7:0]
+     3/4: $1\bird_flap_up_d[0:0]
+     4/4: $1\bird_flap_counter_d[7:0]
+Creating decoders for process `\bird.$proc$synth/yosys_common/build/rtl.sv2v.v:42$4'.
+     1/4: $0\bird_flap_up_q[0:0]
+     2/4: $0\bird_flap_counter_q[7:0]
+     3/4: $0\bird_y_q[10:0]
+     4/4: $0\bird_x_q[10:0]
+
+2.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\dinorun.\_sv2v_0' from process `\dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:0$534'.
+No latch inferred for signal `\dinorun.\score_enable' from process `\dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:907$531'.
+No latch inferred for signal `\dinorun.\vga_red_d' from process `\dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:888$526'.
+No latch inferred for signal `\dinorun.\vga_blue_d' from process `\dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:888$526'.
+No latch inferred for signal `\dinorun.\vga_green_d' from process `\dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:888$526'.
+No latch inferred for signal `\dinorun.\state_d' from process `\dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:844$522'.
+No latch inferred for signal `\dinorun.\flashing_timer_d' from process `\dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:844$522'.
+No latch inferred for signal `\dinorun.\reset_objects_n' from process `\dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:844$522'.
+No latch inferred for signal `\basys3_7seg_driver.\_sv2v_0' from process `\basys3_7seg_driver.$proc$synth/yosys_common/build/rtl.sv2v.v:0$285'.
+No latch inferred for signal `\basys3_7seg_driver.\anode_o' from process `\basys3_7seg_driver.$proc$synth/yosys_common/build/rtl.sv2v.v:602$280'.
+No latch inferred for signal `\basys3_7seg_driver.\current_digit' from process `\basys3_7seg_driver.$proc$synth/yosys_common/build/rtl.sv2v.v:602$280'.
+No latch inferred for signal `\basys3_7seg_driver.\segments_en' from process `\basys3_7seg_driver.$proc$synth/yosys_common/build/rtl.sv2v.v:602$280'.
+No latch inferred for signal `\synchronizer.\_sv2v_0' from process `\synchronizer.$proc$synth/yosys_common/build/rtl.sv2v.v:0$273'.
+No latch inferred for signal `\synchronizer.\sync_data_d' from process `\synchronizer.$proc$synth/yosys_common/build/rtl.sv2v.v:532$267'.
+No latch inferred for signal `\synchronizer.\sv2v_autoblock_1.i' from process `\synchronizer.$proc$synth/yosys_common/build/rtl.sv2v.v:532$267'.
+No latch inferred for signal `\score_counter.\_sv2v_0' from process `\score_counter.$proc$synth/yosys_common/build/rtl.sv2v.v:0$260'.
+No latch inferred for signal `\score_counter.\digit0_d' from process `\score_counter.$proc$synth/yosys_common/build/rtl.sv2v.v:455$250'.
+No latch inferred for signal `\score_counter.\digit1_d' from process `\score_counter.$proc$synth/yosys_common/build/rtl.sv2v.v:455$250'.
+No latch inferred for signal `\score_counter.\digit2_d' from process `\score_counter.$proc$synth/yosys_common/build/rtl.sv2v.v:455$250'.
+No latch inferred for signal `\score_counter.\digit3_d' from process `\score_counter.$proc$synth/yosys_common/build/rtl.sv2v.v:455$250'.
+No latch inferred for signal `\vga_timer.\sv2v_cast_5F333$func$synth/yosys_common/build/rtl.sv2v.v:415$213.$result' from process `\vga_timer.$proc$synth/yosys_common/build/rtl.sv2v.v:0$246'.
+No latch inferred for signal `\vga_timer.\sv2v_cast_5F333$func$synth/yosys_common/build/rtl.sv2v.v:415$215.$result' from process `\vga_timer.$proc$synth/yosys_common/build/rtl.sv2v.v:0$246'.
+No latch inferred for signal `\vga_timer.\sv2v_cast_5F333$func$synth/yosys_common/build/rtl.sv2v.v:415$215.inp' from process `\vga_timer.$proc$synth/yosys_common/build/rtl.sv2v.v:0$246'.
+No latch inferred for signal `\vga_timer.\sv2v_cast_60BAD$func$synth/yosys_common/build/rtl.sv2v.v:410$212.$result' from process `\vga_timer.$proc$synth/yosys_common/build/rtl.sv2v.v:0$242'.
+No latch inferred for signal `\vga_timer.\sv2v_cast_60BAD$func$synth/yosys_common/build/rtl.sv2v.v:410$214.$result' from process `\vga_timer.$proc$synth/yosys_common/build/rtl.sv2v.v:0$242'.
+No latch inferred for signal `\vga_timer.\sv2v_cast_60BAD$func$synth/yosys_common/build/rtl.sv2v.v:410$214.inp' from process `\vga_timer.$proc$synth/yosys_common/build/rtl.sv2v.v:0$242'.
+No latch inferred for signal `\title.\_sv2v_0' from process `\title.$proc$synth/yosys_common/build/rtl.sv2v.v:0$208'.
+No latch inferred for signal `\title.\pixel_o' from process `\title.$proc$synth/yosys_common/build/rtl.sv2v.v:340$201'.
+No latch inferred for signal `\title.$mem2bits$\TITLE_MEM$synth/yosys_common/build/rtl.sv2v.v:345$188' from process `\title.$proc$synth/yosys_common/build/rtl.sv2v.v:340$201'.
+No latch inferred for signal `\dino.\_sv2v_0' from process `\dino.$proc$synth/yosys_common/build/rtl.sv2v.v:0$187'.
+No latch inferred for signal `\dino.\pixel_o' from process `\dino.$proc$synth/yosys_common/build/rtl.sv2v.v:295$130'.
+No latch inferred for signal `\dino.$mem2bits$\DINO_HIT$synth/yosys_common/build/rtl.sv2v.v:301$97' from process `\dino.$proc$synth/yosys_common/build/rtl.sv2v.v:295$130'.
+No latch inferred for signal `\dino.$mem2bits$\DINO_STANDING$synth/yosys_common/build/rtl.sv2v.v:303$98' from process `\dino.$proc$synth/yosys_common/build/rtl.sv2v.v:295$130'.
+No latch inferred for signal `\dino.$mem2bits$\DINO_DOWNLEFT$synth/yosys_common/build/rtl.sv2v.v:306$99' from process `\dino.$proc$synth/yosys_common/build/rtl.sv2v.v:295$130'.
+No latch inferred for signal `\dino.$mem2bits$\DINO_DOWNRIGHT$synth/yosys_common/build/rtl.sv2v.v:308$100' from process `\dino.$proc$synth/yosys_common/build/rtl.sv2v.v:295$130'.
+No latch inferred for signal `\dino.$mem2bits$\DINO_LEFT$synth/yosys_common/build/rtl.sv2v.v:311$101' from process `\dino.$proc$synth/yosys_common/build/rtl.sv2v.v:295$130'.
+No latch inferred for signal `\dino.$mem2bits$\DINO_RIGHT$synth/yosys_common/build/rtl.sv2v.v:313$102' from process `\dino.$proc$synth/yosys_common/build/rtl.sv2v.v:295$130'.
+No latch inferred for signal `\dino.\dino_yp_d' from process `\dino.$proc$synth/yosys_common/build/rtl.sv2v.v:274$110'.
+No latch inferred for signal `\dino.\dino_yv_d' from process `\dino.$proc$synth/yosys_common/build/rtl.sv2v.v:274$110'.
+No latch inferred for signal `\dino.\dino_step_counter_d' from process `\dino.$proc$synth/yosys_common/build/rtl.sv2v.v:262$105'.
+No latch inferred for signal `\dino.\dino_left_d' from process `\dino.$proc$synth/yosys_common/build/rtl.sv2v.v:262$105'.
+No latch inferred for signal `\cactus.\_sv2v_0' from process `\cactus.$proc$synth/yosys_common/build/rtl.sv2v.v:0$96'.
+No latch inferred for signal `\cactus.\pixel_o' from process `\cactus.$proc$synth/yosys_common/build/rtl.sv2v.v:181$67'.
+No latch inferred for signal `\cactus.$mem2bits$\CACTUS0$synth/yosys_common/build/rtl.sv2v.v:188$44' from process `\cactus.$proc$synth/yosys_common/build/rtl.sv2v.v:181$67'.
+No latch inferred for signal `\cactus.$mem2bits$\CACTUS1$synth/yosys_common/build/rtl.sv2v.v:189$45' from process `\cactus.$proc$synth/yosys_common/build/rtl.sv2v.v:181$67'.
+No latch inferred for signal `\cactus.$mem2bits$\CACTUS2$synth/yosys_common/build/rtl.sv2v.v:190$46' from process `\cactus.$proc$synth/yosys_common/build/rtl.sv2v.v:181$67'.
+No latch inferred for signal `\cactus.$mem2bits$\CACTUS3$synth/yosys_common/build/rtl.sv2v.v:191$47' from process `\cactus.$proc$synth/yosys_common/build/rtl.sv2v.v:181$67'.
+No latch inferred for signal `\cactus.\cactus_x_d' from process `\cactus.$proc$synth/yosys_common/build/rtl.sv2v.v:162$51'.
+No latch inferred for signal `\cactus.\cactus_image_d' from process `\cactus.$proc$synth/yosys_common/build/rtl.sv2v.v:162$51'.
+No latch inferred for signal `\bird.\_sv2v_0' from process `\bird.$proc$synth/yosys_common/build/rtl.sv2v.v:0$43'.
+No latch inferred for signal `\bird.\pixel_o' from process `\bird.$proc$synth/yosys_common/build/rtl.sv2v.v:98$28'.
+No latch inferred for signal `\bird.$mem2bits$\BIRD_DOWN$synth/yosys_common/build/rtl.sv2v.v:105$2' from process `\bird.$proc$synth/yosys_common/build/rtl.sv2v.v:98$28'.
+No latch inferred for signal `\bird.$mem2bits$\BIRD_UP$synth/yosys_common/build/rtl.sv2v.v:106$3' from process `\bird.$proc$synth/yosys_common/build/rtl.sv2v.v:98$28'.
+No latch inferred for signal `\bird.\bird_x_d' from process `\bird.$proc$synth/yosys_common/build/rtl.sv2v.v:71$11'.
+No latch inferred for signal `\bird.\bird_y_d' from process `\bird.$proc$synth/yosys_common/build/rtl.sv2v.v:71$11'.
+No latch inferred for signal `\bird.\bird_flap_counter_d' from process `\bird.$proc$synth/yosys_common/build/rtl.sv2v.v:55$6'.
+No latch inferred for signal `\bird.\bird_flap_up_d' from process `\bird.$proc$synth/yosys_common/build/rtl.sv2v.v:55$6'.
+
+2.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\dinorun.\vga_red_q' using process `\dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:757$501'.
+  created $dff cell `$procdff$1351' with positive edge clock.
+Creating register for signal `\dinorun.\vga_blue_q' using process `\dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:757$501'.
+  created $dff cell `$procdff$1352' with positive edge clock.
+Creating register for signal `\dinorun.\vga_green_q' using process `\dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:757$501'.
+  created $dff cell `$procdff$1353' with positive edge clock.
+Creating register for signal `\dinorun.\vga_visible_q' using process `\dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:757$501'.
+  created $dff cell `$procdff$1354' with positive edge clock.
+Creating register for signal `\dinorun.\vga_hsync_q' using process `\dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:757$501'.
+  created $dff cell `$procdff$1355' with positive edge clock.
+Creating register for signal `\dinorun.\vga_vsync_q' using process `\dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:757$501'.
+  created $dff cell `$procdff$1356' with positive edge clock.
+Creating register for signal `\dinorun.\state_q' using process `\dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:728$497'.
+  created $dff cell `$procdff$1357' with positive edge clock.
+Creating register for signal `\dinorun.\flashing_timer_q' using process `\dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:728$497'.
+  created $dff cell `$procdff$1358' with positive edge clock.
+Creating register for signal `\clk_100M_to_clk_1k.\clk_q' using process `\clk_100M_to_clk_1k.$proc$synth/yosys_common/build/rtl.sv2v.v:682$492'.
+  created $dff cell `$procdff$1359' with positive edge clock.
+Creating register for signal `\clk_100M_to_clk_1k.\counter_q' using process `\clk_100M_to_clk_1k.$proc$synth/yosys_common/build/rtl.sv2v.v:677$490'.
+  created $dff cell `$procdff$1360' with positive edge clock.
+Creating register for signal `\basys3_7seg_driver.\counter_q' using process `\basys3_7seg_driver.$proc$synth/yosys_common/build/rtl.sv2v.v:580$275'.
+  created $dff cell `$procdff$1361' with positive edge clock.
+Creating register for signal `\synchronizer.\sync_data_q' using process `\synchronizer.$proc$synth/yosys_common/build/rtl.sv2v.v:543$272'.
+  created $dff cell `$procdff$1362' with positive edge clock.
+Creating register for signal `\synchronizer.\clk_target_q1' using process `\synchronizer.$proc$synth/yosys_common/build/rtl.sv2v.v:543$272'.
+  created $dff cell `$procdff$1363' with positive edge clock.
+Creating register for signal `\synchronizer.\clk_target_q2' using process `\synchronizer.$proc$synth/yosys_common/build/rtl.sv2v.v:543$272'.
+  created $dff cell `$procdff$1364' with positive edge clock.
+Creating register for signal `\lfsr16.\rand_q' using process `\lfsr16.$proc$synth/yosys_common/build/rtl.sv2v.v:505$263'.
+  created $dff cell `$procdff$1365' with positive edge clock.
+Creating register for signal `\score_counter.\digit0_q' using process `\score_counter.$proc$synth/yosys_common/build/rtl.sv2v.v:475$258'.
+  created $dff cell `$procdff$1366' with positive edge clock.
+Creating register for signal `\score_counter.\digit1_q' using process `\score_counter.$proc$synth/yosys_common/build/rtl.sv2v.v:475$258'.
+  created $dff cell `$procdff$1367' with positive edge clock.
+Creating register for signal `\score_counter.\digit2_q' using process `\score_counter.$proc$synth/yosys_common/build/rtl.sv2v.v:475$258'.
+  created $dff cell `$procdff$1368' with positive edge clock.
+Creating register for signal `\score_counter.\digit3_q' using process `\score_counter.$proc$synth/yosys_common/build/rtl.sv2v.v:475$258'.
+  created $dff cell `$procdff$1369' with positive edge clock.
+Creating register for signal `\vga_timer.\x_counter_q' using process `\vga_timer.$proc$synth/yosys_common/build/rtl.sv2v.v:416$240'.
+  created $dff cell `$procdff$1370' with positive edge clock.
+Creating register for signal `\vga_timer.\y_counter_q' using process `\vga_timer.$proc$synth/yosys_common/build/rtl.sv2v.v:416$240'.
+  created $dff cell `$procdff$1371' with positive edge clock.
+Creating register for signal `\edge_detector.\data_q1' using process `\edge_detector.$proc$synth/yosys_common/build/rtl.sv2v.v:362$211'.
+  created $dff cell `$procdff$1372' with positive edge clock.
+Creating register for signal `\edge_detector.\data_q2' using process `\edge_detector.$proc$synth/yosys_common/build/rtl.sv2v.v:362$211'.
+  created $dff cell `$procdff$1373' with positive edge clock.
+Creating register for signal `\dino.\dino_yp_q' using process `\dino.$proc$synth/yosys_common/build/rtl.sv2v.v:249$103'.
+  created $dff cell `$procdff$1374' with positive edge clock.
+Creating register for signal `\dino.\dino_yv_q' using process `\dino.$proc$synth/yosys_common/build/rtl.sv2v.v:249$103'.
+  created $dff cell `$procdff$1375' with positive edge clock.
+Creating register for signal `\dino.\dino_step_counter_q' using process `\dino.$proc$synth/yosys_common/build/rtl.sv2v.v:249$103'.
+  created $dff cell `$procdff$1376' with positive edge clock.
+Creating register for signal `\dino.\dino_left_q' using process `\dino.$proc$synth/yosys_common/build/rtl.sv2v.v:249$103'.
+  created $dff cell `$procdff$1377' with positive edge clock.
+Creating register for signal `\cactus.\cactus_x_q' using process `\cactus.$proc$synth/yosys_common/build/rtl.sv2v.v:150$48'.
+  created $dff cell `$procdff$1378' with positive edge clock.
+Creating register for signal `\cactus.\cactus_image_q' using process `\cactus.$proc$synth/yosys_common/build/rtl.sv2v.v:150$48'.
+  created $dff cell `$procdff$1379' with positive edge clock.
+Creating register for signal `\bird.\bird_x_q' using process `\bird.$proc$synth/yosys_common/build/rtl.sv2v.v:42$4'.
+  created $dff cell `$procdff$1380' with positive edge clock.
+Creating register for signal `\bird.\bird_y_q' using process `\bird.$proc$synth/yosys_common/build/rtl.sv2v.v:42$4'.
+  created $dff cell `$procdff$1381' with positive edge clock.
+Creating register for signal `\bird.\bird_flap_counter_q' using process `\bird.$proc$synth/yosys_common/build/rtl.sv2v.v:42$4'.
+  created $dff cell `$procdff$1382' with positive edge clock.
+Creating register for signal `\bird.\bird_flap_up_q' using process `\bird.$proc$synth/yosys_common/build/rtl.sv2v.v:42$4'.
+  created $dff cell `$procdff$1383' with positive edge clock.
+
+2.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:0$534'.
+Removing empty process `dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:907$531'.
+Found and cleaned up 5 empty switches in `\dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:888$526'.
+Removing empty process `dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:888$526'.
+Found and cleaned up 7 empty switches in `\dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:844$522'.
+Removing empty process `dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:844$522'.
+Removing empty process `dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:757$501'.
+Found and cleaned up 1 empty switch in `\dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:728$497'.
+Removing empty process `dinorun.$proc$synth/yosys_common/build/rtl.sv2v.v:728$497'.
+Removing empty process `clk_100M_to_clk_1k.$proc$synth/yosys_common/build/rtl.sv2v.v:675$493'.
+Removing empty process `clk_100M_to_clk_1k.$proc$synth/yosys_common/build/rtl.sv2v.v:682$492'.
+Removing empty process `clk_100M_to_clk_1k.$proc$synth/yosys_common/build/rtl.sv2v.v:677$490'.
+Removing empty process `basys3_7seg_driver.$proc$synth/yosys_common/build/rtl.sv2v.v:0$285'.
+Found and cleaned up 1 empty switch in `\basys3_7seg_driver.$proc$synth/yosys_common/build/rtl.sv2v.v:602$280'.
+Removing empty process `basys3_7seg_driver.$proc$synth/yosys_common/build/rtl.sv2v.v:602$280'.
+Found and cleaned up 1 empty switch in `\basys3_7seg_driver.$proc$synth/yosys_common/build/rtl.sv2v.v:580$275'.
+Removing empty process `basys3_7seg_driver.$proc$synth/yosys_common/build/rtl.sv2v.v:580$275'.
+Removing empty process `synchronizer.$proc$synth/yosys_common/build/rtl.sv2v.v:0$273'.
+Removing empty process `synchronizer.$proc$synth/yosys_common/build/rtl.sv2v.v:543$272'.
+Found and cleaned up 4 empty switches in `\synchronizer.$proc$synth/yosys_common/build/rtl.sv2v.v:532$267'.
+Removing empty process `synchronizer.$proc$synth/yosys_common/build/rtl.sv2v.v:532$267'.
+Found and cleaned up 2 empty switches in `\lfsr16.$proc$synth/yosys_common/build/rtl.sv2v.v:505$263'.
+Removing empty process `lfsr16.$proc$synth/yosys_common/build/rtl.sv2v.v:505$263'.
+Removing empty process `score_counter.$proc$synth/yosys_common/build/rtl.sv2v.v:0$260'.
+Found and cleaned up 2 empty switches in `\score_counter.$proc$synth/yosys_common/build/rtl.sv2v.v:475$258'.
+Removing empty process `score_counter.$proc$synth/yosys_common/build/rtl.sv2v.v:475$258'.
+Found and cleaned up 3 empty switches in `\score_counter.$proc$synth/yosys_common/build/rtl.sv2v.v:455$250'.
+Removing empty process `score_counter.$proc$synth/yosys_common/build/rtl.sv2v.v:455$250'.
+Removing empty process `vga_timer.$proc$synth/yosys_common/build/rtl.sv2v.v:0$246'.
+Removing empty process `vga_timer.$proc$synth/yosys_common/build/rtl.sv2v.v:0$242'.
+Found and cleaned up 1 empty switch in `\vga_timer.$proc$synth/yosys_common/build/rtl.sv2v.v:416$240'.
+Removing empty process `vga_timer.$proc$synth/yosys_common/build/rtl.sv2v.v:416$240'.
+Removing empty process `edge_detector.$proc$synth/yosys_common/build/rtl.sv2v.v:362$211'.
+Removing empty process `title.$proc$synth/yosys_common/build/rtl.sv2v.v:0$208'.
+Found and cleaned up 1 empty switch in `\title.$proc$synth/yosys_common/build/rtl.sv2v.v:340$201'.
+Removing empty process `title.$proc$synth/yosys_common/build/rtl.sv2v.v:340$201'.
+Removing empty process `dino.$proc$synth/yosys_common/build/rtl.sv2v.v:0$187'.
+Found and cleaned up 6 empty switches in `\dino.$proc$synth/yosys_common/build/rtl.sv2v.v:295$130'.
+Removing empty process `dino.$proc$synth/yosys_common/build/rtl.sv2v.v:295$130'.
+Found and cleaned up 3 empty switches in `\dino.$proc$synth/yosys_common/build/rtl.sv2v.v:274$110'.
+Removing empty process `dino.$proc$synth/yosys_common/build/rtl.sv2v.v:274$110'.
+Found and cleaned up 1 empty switch in `\dino.$proc$synth/yosys_common/build/rtl.sv2v.v:262$105'.
+Removing empty process `dino.$proc$synth/yosys_common/build/rtl.sv2v.v:262$105'.
+Found and cleaned up 2 empty switches in `\dino.$proc$synth/yosys_common/build/rtl.sv2v.v:249$103'.
+Removing empty process `dino.$proc$synth/yosys_common/build/rtl.sv2v.v:249$103'.
+Removing empty process `cactus.$proc$synth/yosys_common/build/rtl.sv2v.v:0$96'.
+Found and cleaned up 2 empty switches in `\cactus.$proc$synth/yosys_common/build/rtl.sv2v.v:181$67'.
+Removing empty process `cactus.$proc$synth/yosys_common/build/rtl.sv2v.v:181$67'.
+Found and cleaned up 3 empty switches in `\cactus.$proc$synth/yosys_common/build/rtl.sv2v.v:162$51'.
+Removing empty process `cactus.$proc$synth/yosys_common/build/rtl.sv2v.v:162$51'.
+Found and cleaned up 1 empty switch in `\cactus.$proc$synth/yosys_common/build/rtl.sv2v.v:150$48'.
+Removing empty process `cactus.$proc$synth/yosys_common/build/rtl.sv2v.v:150$48'.
+Removing empty process `bird.$proc$synth/yosys_common/build/rtl.sv2v.v:0$43'.
+Found and cleaned up 2 empty switches in `\bird.$proc$synth/yosys_common/build/rtl.sv2v.v:98$28'.
+Removing empty process `bird.$proc$synth/yosys_common/build/rtl.sv2v.v:98$28'.
+Found and cleaned up 4 empty switches in `\bird.$proc$synth/yosys_common/build/rtl.sv2v.v:71$11'.
+Removing empty process `bird.$proc$synth/yosys_common/build/rtl.sv2v.v:71$11'.
+Found and cleaned up 2 empty switches in `\bird.$proc$synth/yosys_common/build/rtl.sv2v.v:55$6'.
+Removing empty process `bird.$proc$synth/yosys_common/build/rtl.sv2v.v:55$6'.
+Found and cleaned up 1 empty switch in `\bird.$proc$synth/yosys_common/build/rtl.sv2v.v:42$4'.
+Removing empty process `bird.$proc$synth/yosys_common/build/rtl.sv2v.v:42$4'.
+Cleaned up 55 empty switches.
+
+2.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dinorun.
+<suppressed ~9 debug messages>
+Optimizing module clk_100M_to_clk_1k.
+<suppressed ~1 debug messages>
+Optimizing module hex7seg.
+Optimizing module basys3_7seg_driver.
+<suppressed ~7 debug messages>
+Optimizing module synchronizer.
+Optimizing module lfsr16.
+<suppressed ~2 debug messages>
+Optimizing module score_counter.
+<suppressed ~4 debug messages>
+Optimizing module vga_timer.
+<suppressed ~2 debug messages>
+Optimizing module edge_detector.
+Optimizing module title.
+Optimizing module dino.
+<suppressed ~26 debug messages>
+Optimizing module cactus.
+<suppressed ~11 debug messages>
+Optimizing module bird.
+<suppressed ~16 debug messages>
+
+2.3. Executing FUTURE pass.
+
+2.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module dinorun.
+Optimizing module clk_100M_to_clk_1k.
+Optimizing module hex7seg.
+Optimizing module basys3_7seg_driver.
+Optimizing module synchronizer.
+Optimizing module lfsr16.
+Optimizing module score_counter.
+Optimizing module vga_timer.
+Optimizing module edge_detector.
+Optimizing module title.
+Optimizing module dino.
+Optimizing module cactus.
+Optimizing module bird.
+
+2.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \dinorun..
+Finding unused cells or wires in module \clk_100M_to_clk_1k..
+Finding unused cells or wires in module \hex7seg..
+Finding unused cells or wires in module \basys3_7seg_driver..
+Finding unused cells or wires in module \synchronizer..
+Finding unused cells or wires in module \lfsr16..
+Finding unused cells or wires in module \score_counter..
+Finding unused cells or wires in module \vga_timer..
+Finding unused cells or wires in module \edge_detector..
+Finding unused cells or wires in module \title..
+Finding unused cells or wires in module \dino..
+Finding unused cells or wires in module \cactus..
+Finding unused cells or wires in module \bird..
+Removed 118 unused cells and 659 unused wires.
+<suppressed ~136 debug messages>
+
+2.6. Executing CHECK pass (checking for obvious problems).
+Checking module basys3_7seg_driver...
+Checking module bird...
+Checking module cactus...
+Checking module clk_100M_to_clk_1k...
+Checking module dino...
+Checking module dinorun...
+Checking module edge_detector...
+Checking module hex7seg...
+Checking module lfsr16...
+Checking module score_counter...
+Checking module synchronizer...
+Checking module title...
+Checking module vga_timer...
+Found and reported 0 problems.
+
+2.7. Executing OPT pass (performing simple optimizations).
+
+2.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module basys3_7seg_driver.
+Optimizing module bird.
+Optimizing module cactus.
+Optimizing module clk_100M_to_clk_1k.
+Optimizing module dino.
+Optimizing module dinorun.
+Optimizing module edge_detector.
+Optimizing module hex7seg.
+Optimizing module lfsr16.
+Optimizing module score_counter.
+Optimizing module synchronizer.
+Optimizing module title.
+Optimizing module vga_timer.
+
+2.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\basys3_7seg_driver'.
+<suppressed ~60 debug messages>
+Finding identical cells in module `\bird'.
+Finding identical cells in module `\cactus'.
+Finding identical cells in module `\clk_100M_to_clk_1k'.
+Finding identical cells in module `\dino'.
+Finding identical cells in module `\dinorun'.
+<suppressed ~75 debug messages>
+Finding identical cells in module `\edge_detector'.
+Finding identical cells in module `\hex7seg'.
+<suppressed ~396 debug messages>
+Finding identical cells in module `\lfsr16'.
+Finding identical cells in module `\score_counter'.
+Finding identical cells in module `\synchronizer'.
+Finding identical cells in module `\title'.
+Finding identical cells in module `\vga_timer'.
+Removed a total of 177 cells.
+
+2.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \basys3_7seg_driver..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \bird..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$1248.
+    dead port 2/2 on $mux $procmux$1278.
+    dead port 2/2 on $mux $procmux$1281.
+    dead port 2/2 on $mux $procmux$1283.
+    dead port 2/2 on $mux $procmux$1290.
+    dead port 2/2 on $mux $procmux$1292.
+    dead port 2/2 on $mux $procmux$1299.
+    dead port 2/2 on $mux $procmux$1301.
+    dead port 2/2 on $mux $procmux$1307.
+    dead port 2/2 on $mux $procmux$1313.
+    dead port 2/2 on $mux $procmux$1325.
+    dead port 2/2 on $mux $procmux$1331.
+Running muxtree optimizer on module \cactus..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$1153.
+    dead port 2/2 on $mux $procmux$1207.
+    dead port 2/2 on $mux $procmux$1209.
+    dead port 2/2 on $mux $procmux$1216.
+    dead port 2/2 on $mux $procmux$1218.
+    dead port 2/2 on $mux $procmux$1224.
+    dead port 2/2 on $mux $procmux$1230.
+Running muxtree optimizer on module \clk_100M_to_clk_1k..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \dino..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$1038.
+    dead port 1/2 on $mux $procmux$1101.
+    dead port 1/2 on $mux $procmux$1107.
+    dead port 1/2 on $mux $procmux$835.
+    dead port 2/2 on $mux $procmux$838.
+    dead port 1/2 on $mux $procmux$841.
+    dead port 2/2 on $mux $procmux$843.
+    dead port 2/2 on $mux $procmux$880.
+    dead port 2/2 on $mux $procmux$883.
+    dead port 1/2 on $mux $procmux$886.
+    dead port 2/2 on $mux $procmux$888.
+    dead port 2/2 on $mux $procmux$949.
+    dead port 1/2 on $mux $procmux$952.
+    dead port 2/2 on $mux $procmux$954.
+    dead port 1/2 on $mux $procmux$985.
+    dead port 2/2 on $mux $procmux$987.
+Running muxtree optimizer on module \dinorun..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$539.
+    dead port 1/2 on $mux $procmux$542.
+    dead port 1/2 on $mux $procmux$545.
+    dead port 1/2 on $mux $procmux$548.
+    dead port 1/2 on $mux $procmux$554.
+    dead port 1/2 on $mux $procmux$557.
+    dead port 1/2 on $mux $procmux$560.
+    dead port 1/2 on $mux $procmux$566.
+    dead port 1/2 on $mux $procmux$569.
+    dead port 1/2 on $mux $procmux$572.
+    dead port 1/2 on $mux $procmux$578.
+    dead port 1/2 on $mux $procmux$581.
+    dead port 1/2 on $mux $procmux$584.
+    dead port 1/2 on $mux $procmux$590.
+    dead port 1/2 on $mux $procmux$593.
+    dead port 1/2 on $mux $procmux$599.
+    dead port 1/2 on $mux $procmux$602.
+    dead port 1/2 on $mux $procmux$608.
+    dead port 1/2 on $mux $procmux$611.
+    dead port 1/2 on $mux $procmux$617.
+    dead port 1/2 on $mux $procmux$623.
+    dead port 1/2 on $mux $procmux$629.
+    dead port 1/2 on $mux $procmux$644.
+    dead port 2/2 on $mux $procmux$646.
+    dead port 1/2 on $mux $procmux$652.
+    dead port 2/2 on $mux $procmux$654.
+    dead port 2/2 on $mux $procmux$659.
+    dead port 2/2 on $mux $procmux$664.
+    dead port 2/2 on $mux $procmux$671.
+    dead port 2/2 on $mux $procmux$673.
+    dead port 2/2 on $mux $procmux$679.
+    dead port 2/2 on $mux $procmux$685.
+    dead port 2/2 on $mux $procmux$692.
+    dead port 2/2 on $mux $procmux$699.
+    dead port 2/2 on $mux $procmux$707.
+Running muxtree optimizer on module \edge_detector..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \hex7seg..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \lfsr16..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \score_counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \synchronizer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \title..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \vga_timer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 70 multiplexer ports.
+<suppressed ~48 debug messages>
+
+2.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \basys3_7seg_driver.
+    New ctrl vector for $pmux cell $procmux$730: { $procmux$732_CMP $auto$opt_reduce.cc:134:opt_pmux$1385 }
+    New ctrl vector for $pmux cell $procmux$735: { $procmux$733_CMP $auto$opt_reduce.cc:134:opt_pmux$1387 }
+    New ctrl vector for $pmux cell $procmux$755: { $procmux$734_CMP $auto$opt_reduce.cc:134:opt_pmux$1389 }
+    New ctrl vector for $pmux cell $procmux$740: { $auto$opt_reduce.cc:134:opt_pmux$1391 $procmux$731_CMP }
+  Optimizing cells in module \basys3_7seg_driver.
+  Optimizing cells in module \bird.
+  Optimizing cells in module \cactus.
+  Optimizing cells in module \clk_100M_to_clk_1k.
+  Optimizing cells in module \dino.
+  Optimizing cells in module \dinorun.
+    New ctrl vector for $pmux cell $procmux$714: { $auto$opt_reduce.cc:134:opt_pmux$1393 $eq$synth/yosys_common/build/rtl.sv2v.v:727$495_Y }
+    New ctrl vector for $pmux cell $procmux$719: { $eq$synth/yosys_common/build/rtl.sv2v.v:815$510_Y $eq$synth/yosys_common/build/rtl.sv2v.v:727$494_Y $auto$opt_reduce.cc:134:opt_pmux$1395 }
+  Optimizing cells in module \dinorun.
+  Optimizing cells in module \edge_detector.
+  Optimizing cells in module \hex7seg.
+  Optimizing cells in module \lfsr16.
+  Optimizing cells in module \score_counter.
+  Optimizing cells in module \synchronizer.
+  Optimizing cells in module \title.
+  Optimizing cells in module \vga_timer.
+Performed a total of 6 changes.
+
+2.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\basys3_7seg_driver'.
+Finding identical cells in module `\bird'.
+Finding identical cells in module `\cactus'.
+Finding identical cells in module `\clk_100M_to_clk_1k'.
+Finding identical cells in module `\dino'.
+Finding identical cells in module `\dinorun'.
+Finding identical cells in module `\edge_detector'.
+Finding identical cells in module `\hex7seg'.
+Finding identical cells in module `\lfsr16'.
+Finding identical cells in module `\score_counter'.
+Finding identical cells in module `\synchronizer'.
+Finding identical cells in module `\title'.
+Finding identical cells in module `\vga_timer'.
+Removed a total of 0 cells.
+
+2.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \basys3_7seg_driver..
+Finding unused cells or wires in module \bird..
+Finding unused cells or wires in module \cactus..
+Finding unused cells or wires in module \clk_100M_to_clk_1k..
+Finding unused cells or wires in module \dino..
+Finding unused cells or wires in module \dinorun..
+Finding unused cells or wires in module \edge_detector..
+Finding unused cells or wires in module \hex7seg..
+Finding unused cells or wires in module \lfsr16..
+Finding unused cells or wires in module \score_counter..
+Finding unused cells or wires in module \synchronizer..
+Finding unused cells or wires in module \title..
+Finding unused cells or wires in module \vga_timer..
+Removed 0 unused cells and 247 unused wires.
+<suppressed ~6 debug messages>
+
+2.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module basys3_7seg_driver.
+Optimizing module bird.
+Optimizing module cactus.
+Optimizing module clk_100M_to_clk_1k.
+Optimizing module dino.
+Optimizing module dinorun.
+Optimizing module edge_detector.
+Optimizing module hex7seg.
+Optimizing module lfsr16.
+Optimizing module score_counter.
+Optimizing module synchronizer.
+Optimizing module title.
+Optimizing module vga_timer.
+
+2.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \basys3_7seg_driver..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \bird..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \cactus..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \clk_100M_to_clk_1k..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \dino..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \dinorun..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \edge_detector..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \hex7seg..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \lfsr16..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \score_counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \synchronizer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \title..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \vga_timer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~48 debug messages>
+
+2.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \basys3_7seg_driver.
+  Optimizing cells in module \bird.
+  Optimizing cells in module \cactus.
+  Optimizing cells in module \clk_100M_to_clk_1k.
+  Optimizing cells in module \dino.
+  Optimizing cells in module \dinorun.
+  Optimizing cells in module \edge_detector.
+  Optimizing cells in module \hex7seg.
+  Optimizing cells in module \lfsr16.
+  Optimizing cells in module \score_counter.
+  Optimizing cells in module \synchronizer.
+  Optimizing cells in module \title.
+  Optimizing cells in module \vga_timer.
+Performed a total of 0 changes.
+
+2.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\basys3_7seg_driver'.
+Finding identical cells in module `\bird'.
+Finding identical cells in module `\cactus'.
+Finding identical cells in module `\clk_100M_to_clk_1k'.
+Finding identical cells in module `\dino'.
+Finding identical cells in module `\dinorun'.
+Finding identical cells in module `\edge_detector'.
+Finding identical cells in module `\hex7seg'.
+Finding identical cells in module `\lfsr16'.
+Finding identical cells in module `\score_counter'.
+Finding identical cells in module `\synchronizer'.
+Finding identical cells in module `\title'.
+Finding identical cells in module `\vga_timer'.
+Removed a total of 0 cells.
+
+2.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \basys3_7seg_driver..
+Finding unused cells or wires in module \bird..
+Finding unused cells or wires in module \cactus..
+Finding unused cells or wires in module \clk_100M_to_clk_1k..
+Finding unused cells or wires in module \dino..
+Finding unused cells or wires in module \dinorun..
+Finding unused cells or wires in module \edge_detector..
+Finding unused cells or wires in module \hex7seg..
+Finding unused cells or wires in module \lfsr16..
+Finding unused cells or wires in module \score_counter..
+Finding unused cells or wires in module \synchronizer..
+Finding unused cells or wires in module \title..
+Finding unused cells or wires in module \vga_timer..
+
+2.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module basys3_7seg_driver.
+Optimizing module bird.
+Optimizing module cactus.
+Optimizing module clk_100M_to_clk_1k.
+Optimizing module dino.
+Optimizing module dinorun.
+Optimizing module edge_detector.
+Optimizing module hex7seg.
+Optimizing module lfsr16.
+Optimizing module score_counter.
+Optimizing module synchronizer.
+Optimizing module title.
+Optimizing module vga_timer.
+
+2.7.14. Finished OPT passes. (There is nothing left to do.)
+
+2.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 31 bits (of 32) from port B of cell basys3_7seg_driver.$add$synth/yosys_common/build/rtl.sv2v.v:579$274 ($add).
+Removed top 30 bits (of 32) from port Y of cell basys3_7seg_driver.$add$synth/yosys_common/build/rtl.sv2v.v:579$274 ($add).
+Removed top 25 bits (of 32) from port A of cell basys3_7seg_driver.$not$synth/yosys_common/build/rtl.sv2v.v:601$278 ($not).
+Removed top 25 bits (of 32) from mux cell basys3_7seg_driver.$ternary$synth/yosys_common/build/rtl.sv2v.v:601$279 ($mux).
+Removed top 1 bits (of 2) from port B of cell basys3_7seg_driver.$procmux$733_CMP0 ($eq).
+Removed top 25 bits (of 32) from port Y of cell basys3_7seg_driver.$not$synth/yosys_common/build/rtl.sv2v.v:601$278 ($not).
+Removed top 25 bits (of 32) from wire basys3_7seg_driver.$not$synth/yosys_common/build/rtl.sv2v.v:601$278_Y.
+Removed top 30 bits (of 32) from port B of cell bird.$div$synth/yosys_common/build/rtl.sv2v.v:96$24 ($div).
+Removed top 30 bits (of 32) from port B of cell bird.$div$synth/yosys_common/build/rtl.sv2v.v:97$27 ($div).
+Removed top 27 address bits (of 32) from memory init port bird.$meminit$\BIRD_DOWN$synth/yosys_common/build/rtl.sv2v.v:0$40 (BIRD_DOWN).
+Removed top 27 address bits (of 32) from memory init port bird.$meminit$\BIRD_UP$synth/yosys_common/build/rtl.sv2v.v:0$39 (BIRD_UP).
+Removed top 5 address bits (of 10) from memory read port bird.$memrd$\BIRD_DOWN$synth/yosys_common/build/rtl.sv2v.v:105$35 (BIRD_DOWN).
+Removed top 5 address bits (of 10) from memory read port bird.$memrd$\BIRD_UP$synth/yosys_common/build/rtl.sv2v.v:106$37 (BIRD_UP).
+Removed top 31 bits (of 32) from port B of cell bird.$add$synth/yosys_common/build/rtl.sv2v.v:61$7 ($add).
+Removed top 24 bits (of 32) from port Y of cell bird.$add$synth/yosys_common/build/rtl.sv2v.v:61$7 ($add).
+Removed top 5 bits (of 8) from port B of cell bird.$eq$synth/yosys_common/build/rtl.sv2v.v:62$8 ($eq).
+Removed top 25 bits (of 32) from port B of cell bird.$le$synth/yosys_common/build/rtl.sv2v.v:69$10 ($le).
+Removed top 27 bits (of 32) from port B of cell bird.$sub$synth/yosys_common/build/rtl.sv2v.v:78$13 ($sub).
+Removed top 21 bits (of 32) from port Y of cell bird.$sub$synth/yosys_common/build/rtl.sv2v.v:78$13 ($sub).
+Removed top 26 bits (of 32) from port B of cell bird.$add$synth/yosys_common/build/rtl.sv2v.v:93$15 ($add).
+Removed top 20 bits (of 32) from port Y of cell bird.$add$synth/yosys_common/build/rtl.sv2v.v:93$15 ($add).
+Removed top 20 bits (of 32) from port B of cell bird.$lt$synth/yosys_common/build/rtl.sv2v.v:93$16 ($lt).
+Removed top 26 bits (of 32) from port B of cell bird.$add$synth/yosys_common/build/rtl.sv2v.v:94$19 ($add).
+Removed top 20 bits (of 32) from port Y of cell bird.$add$synth/yosys_common/build/rtl.sv2v.v:94$19 ($add).
+Removed top 20 bits (of 32) from port B of cell bird.$lt$synth/yosys_common/build/rtl.sv2v.v:94$20 ($lt).
+Removed top 20 bits (of 32) from port Y of cell bird.$sub$synth/yosys_common/build/rtl.sv2v.v:96$23 ($sub).
+Removed top 27 bits (of 32) from port A of cell bird.$sub$synth/yosys_common/build/rtl.sv2v.v:96$25 ($sub).
+Removed top 22 bits (of 32) from port Y of cell bird.$sub$synth/yosys_common/build/rtl.sv2v.v:96$25 ($sub).
+Removed top 22 bits (of 32) from port B of cell bird.$sub$synth/yosys_common/build/rtl.sv2v.v:96$25 ($sub).
+Removed top 20 bits (of 32) from port Y of cell bird.$sub$synth/yosys_common/build/rtl.sv2v.v:97$26 ($sub).
+Removed top 1 bits (of 2) from port B of cell bird.$procmux$1276_CMP0 ($eq).
+Removed top 24 bits (of 32) from wire bird.$add$synth/yosys_common/build/rtl.sv2v.v:61$7_Y.
+Removed top 20 bits (of 32) from wire bird.$add$synth/yosys_common/build/rtl.sv2v.v:93$15_Y.
+Removed top 30 bits (of 32) from port B of cell cactus.$div$synth/yosys_common/build/rtl.sv2v.v:179$63 ($div).
+Removed top 30 bits (of 32) from port B of cell cactus.$div$synth/yosys_common/build/rtl.sv2v.v:180$66 ($div).
+Removed top 26 address bits (of 32) from memory init port cactus.$meminit$\CACTUS0$synth/yosys_common/build/rtl.sv2v.v:0$88 (CACTUS0).
+Removed top 26 address bits (of 32) from memory init port cactus.$meminit$\CACTUS1$synth/yosys_common/build/rtl.sv2v.v:0$89 (CACTUS1).
+Removed top 26 address bits (of 32) from memory init port cactus.$meminit$\CACTUS2$synth/yosys_common/build/rtl.sv2v.v:0$90 (CACTUS2).
+Removed top 26 address bits (of 32) from memory init port cactus.$meminit$\CACTUS3$synth/yosys_common/build/rtl.sv2v.v:0$91 (CACTUS3).
+Removed top 4 address bits (of 10) from memory read port cactus.$memrd$\CACTUS0$synth/yosys_common/build/rtl.sv2v.v:188$80 (CACTUS0).
+Removed top 4 address bits (of 10) from memory read port cactus.$memrd$\CACTUS1$synth/yosys_common/build/rtl.sv2v.v:189$82 (CACTUS1).
+Removed top 4 address bits (of 10) from memory read port cactus.$memrd$\CACTUS2$synth/yosys_common/build/rtl.sv2v.v:190$84 (CACTUS2).
+Removed top 4 address bits (of 10) from memory read port cactus.$memrd$\CACTUS3$synth/yosys_common/build/rtl.sv2v.v:191$86 (CACTUS3).
+Removed top 26 bits (of 32) from port B of cell cactus.$le$synth/yosys_common/build/rtl.sv2v.v:160$50 ($le).
+Removed top 27 bits (of 32) from port B of cell cactus.$sub$synth/yosys_common/build/rtl.sv2v.v:169$53 ($sub).
+Removed top 21 bits (of 32) from port Y of cell cactus.$sub$synth/yosys_common/build/rtl.sv2v.v:169$53 ($sub).
+Removed top 27 bits (of 32) from port B of cell cactus.$add$synth/yosys_common/build/rtl.sv2v.v:176$55 ($add).
+Removed top 20 bits (of 32) from port Y of cell cactus.$add$synth/yosys_common/build/rtl.sv2v.v:176$55 ($add).
+Removed top 20 bits (of 32) from port B of cell cactus.$lt$synth/yosys_common/build/rtl.sv2v.v:176$56 ($lt).
+Removed top 23 bits (of 32) from port B of cell cactus.$ge$synth/yosys_common/build/rtl.sv2v.v:177$58 ($ge).
+Removed top 23 bits (of 32) from port B of cell cactus.$lt$synth/yosys_common/build/rtl.sv2v.v:177$59 ($lt).
+Removed top 20 bits (of 32) from port Y of cell cactus.$sub$synth/yosys_common/build/rtl.sv2v.v:179$62 ($sub).
+Removed top 28 bits (of 32) from port A of cell cactus.$sub$synth/yosys_common/build/rtl.sv2v.v:179$64 ($sub).
+Removed top 22 bits (of 32) from port Y of cell cactus.$sub$synth/yosys_common/build/rtl.sv2v.v:179$64 ($sub).
+Removed top 22 bits (of 32) from port B of cell cactus.$sub$synth/yosys_common/build/rtl.sv2v.v:179$64 ($sub).
+Removed top 23 bits (of 32) from port B of cell cactus.$sub$synth/yosys_common/build/rtl.sv2v.v:180$65 ($sub).
+Removed top 21 bits (of 32) from port Y of cell cactus.$sub$synth/yosys_common/build/rtl.sv2v.v:180$65 ($sub).
+Removed top 1 bits (of 2) from port B of cell cactus.$procmux$1151_CMP0 ($eq).
+Removed top 20 bits (of 32) from wire cactus.$add$synth/yosys_common/build/rtl.sv2v.v:176$55_Y.
+Removed top 21 bits (of 32) from wire cactus.$sub$synth/yosys_common/build/rtl.sv2v.v:169$53_Y.
+Removed top 1 bits (of 18) from port B of cell clk_100M_to_clk_1k.$eq$synth/yosys_common/build/rtl.sv2v.v:676$486 ($eq).
+Removed top 31 bits (of 32) from port B of cell clk_100M_to_clk_1k.$add$synth/yosys_common/build/rtl.sv2v.v:676$487 ($add).
+Removed top 13 bits (of 32) from port Y of cell clk_100M_to_clk_1k.$add$synth/yosys_common/build/rtl.sv2v.v:676$487 ($add).
+Removed top 14 bits (of 32) from mux cell clk_100M_to_clk_1k.$ternary$synth/yosys_common/build/rtl.sv2v.v:676$489 ($mux).
+Removed top 16 bits (of 32) from port B of cell clk_100M_to_clk_1k.$gt$synth/yosys_common/build/rtl.sv2v.v:680$491 ($gt).
+Removed top 1 bits (of 19) from port Y of cell clk_100M_to_clk_1k.$add$synth/yosys_common/build/rtl.sv2v.v:676$487 ($add).
+Removed top 14 bits (of 32) from wire clk_100M_to_clk_1k.$add$synth/yosys_common/build/rtl.sv2v.v:676$487_Y.
+Removed top 31 bits (of 32) from port B of cell dino.$div$synth/yosys_common/build/rtl.sv2v.v:293$126 ($div).
+Removed top 31 bits (of 32) from port B of cell dino.$div$synth/yosys_common/build/rtl.sv2v.v:294$129 ($div).
+Removed top 26 address bits (of 32) from memory init port dino.$meminit$\DINO_DOWNLEFT$synth/yosys_common/build/rtl.sv2v.v:0$175 (DINO_DOWNLEFT).
+Removed top 26 address bits (of 32) from memory init port dino.$meminit$\DINO_DOWNRIGHT$synth/yosys_common/build/rtl.sv2v.v:0$176 (DINO_DOWNRIGHT).
+Removed top 26 address bits (of 32) from memory init port dino.$meminit$\DINO_HIT$synth/yosys_common/build/rtl.sv2v.v:0$177 (DINO_HIT).
+Removed top 26 address bits (of 32) from memory init port dino.$meminit$\DINO_LEFT$synth/yosys_common/build/rtl.sv2v.v:0$178 (DINO_LEFT).
+Removed top 26 address bits (of 32) from memory init port dino.$meminit$\DINO_RIGHT$synth/yosys_common/build/rtl.sv2v.v:0$179 (DINO_RIGHT).
+Removed top 26 address bits (of 32) from memory init port dino.$meminit$\DINO_STANDING$synth/yosys_common/build/rtl.sv2v.v:0$180 (DINO_STANDING).
+Removed top 4 address bits (of 10) from memory read port dino.$memrd$\DINO_DOWNLEFT$synth/yosys_common/build/rtl.sv2v.v:306$165 (DINO_DOWNLEFT).
+Removed top 4 address bits (of 10) from memory read port dino.$memrd$\DINO_DOWNRIGHT$synth/yosys_common/build/rtl.sv2v.v:308$167 (DINO_DOWNRIGHT).
+Removed top 4 address bits (of 10) from memory read port dino.$memrd$\DINO_HIT$synth/yosys_common/build/rtl.sv2v.v:301$149 (DINO_HIT).
+Removed top 4 address bits (of 10) from memory read port dino.$memrd$\DINO_LEFT$synth/yosys_common/build/rtl.sv2v.v:311$171 (DINO_LEFT).
+Removed top 4 address bits (of 10) from memory read port dino.$memrd$\DINO_RIGHT$synth/yosys_common/build/rtl.sv2v.v:313$173 (DINO_RIGHT).
+Removed top 4 address bits (of 10) from memory read port dino.$memrd$\DINO_STANDING$synth/yosys_common/build/rtl.sv2v.v:303$157 (DINO_STANDING).
+Removed top 31 bits (of 32) from port B of cell dino.$add$synth/yosys_common/build/rtl.sv2v.v:267$106 ($add).
+Removed top 24 bits (of 32) from port Y of cell dino.$add$synth/yosys_common/build/rtl.sv2v.v:267$106 ($add).
+Removed top 6 bits (of 8) from port B of cell dino.$eq$synth/yosys_common/build/rtl.sv2v.v:268$107 ($eq).
+Removed top 22 bits (of 32) from port B of cell dino.$ge$synth/yosys_common/build/rtl.sv2v.v:273$109 ($ge).
+Removed top 30 bits (of 32) from mux cell dino.$ternary$synth/yosys_common/build/rtl.sv2v.v:283$114 ($mux).
+Removed top 29 bits (of 32) from port B of cell dino.$add$synth/yosys_common/build/rtl.sv2v.v:283$115 ($add).
+Removed top 21 bits (of 32) from port Y of cell dino.$add$synth/yosys_common/build/rtl.sv2v.v:283$115 ($add).
+Removed top 22 bits (of 32) from port B of cell dino.$ge$synth/yosys_common/build/rtl.sv2v.v:284$116 ($ge).
+Removed top 25 bits (of 32) from port B of cell dino.$ge$synth/yosys_common/build/rtl.sv2v.v:290$117 ($ge).
+Removed top 24 bits (of 32) from port B of cell dino.$lt$synth/yosys_common/build/rtl.sv2v.v:290$118 ($lt).
+Removed top 26 bits (of 32) from port B of cell dino.$add$synth/yosys_common/build/rtl.sv2v.v:291$121 ($add).
+Removed top 20 bits (of 32) from port Y of cell dino.$add$synth/yosys_common/build/rtl.sv2v.v:291$121 ($add).
+Removed top 20 bits (of 32) from port B of cell dino.$lt$synth/yosys_common/build/rtl.sv2v.v:291$122 ($lt).
+Removed top 25 bits (of 32) from port B of cell dino.$sub$synth/yosys_common/build/rtl.sv2v.v:293$125 ($sub).
+Removed top 21 bits (of 32) from port Y of cell dino.$sub$synth/yosys_common/build/rtl.sv2v.v:293$125 ($sub).
+Removed top 26 bits (of 32) from port A of cell dino.$sub$synth/yosys_common/build/rtl.sv2v.v:293$127 ($sub).
+Removed top 22 bits (of 32) from port Y of cell dino.$sub$synth/yosys_common/build/rtl.sv2v.v:293$127 ($sub).
+Removed top 22 bits (of 32) from port B of cell dino.$sub$synth/yosys_common/build/rtl.sv2v.v:293$127 ($sub).
+Removed top 20 bits (of 32) from port Y of cell dino.$sub$synth/yosys_common/build/rtl.sv2v.v:294$128 ($sub).
+Removed top 24 bits (of 32) from wire dino.$add$synth/yosys_common/build/rtl.sv2v.v:267$106_Y.
+Removed top 21 bits (of 32) from wire dino.$add$synth/yosys_common/build/rtl.sv2v.v:283$115_Y.
+Removed top 1 bits (of 12) from mux cell dinorun.$procmux$536 ($mux).
+Removed top 28 bits (of 32) from mux cell dinorun.$ternary$synth/yosys_common/build/rtl.sv2v.v:765$503 ($mux).
+Removed top 28 bits (of 32) from mux cell dinorun.$ternary$synth/yosys_common/build/rtl.sv2v.v:766$505 ($mux).
+Removed top 28 bits (of 32) from mux cell dinorun.$ternary$synth/yosys_common/build/rtl.sv2v.v:767$507 ($mux).
+Removed top 1 bits (of 2) from port B of cell dinorun.$eq$synth/yosys_common/build/rtl.sv2v.v:815$510 ($eq).
+Removed top 31 bits (of 32) from port B of cell dinorun.$sub$synth/yosys_common/build/rtl.sv2v.v:863$523 ($sub).
+Removed top 24 bits (of 32) from port Y of cell dinorun.$sub$synth/yosys_common/build/rtl.sv2v.v:863$523 ($sub).
+Removed top 1 bits (of 10) from port A of cell dinorun.$lt$synth/yosys_common/build/rtl.sv2v.v:902$530 ($lt).
+Removed top 23 bits (of 32) from port B of cell dinorun.$lt$synth/yosys_common/build/rtl.sv2v.v:902$530 ($lt).
+Removed top 2 bits (of 8) from mux cell dinorun.$procmux$690 ($mux).
+Removed top 2 bits (of 8) from wire dinorun.$2\flashing_timer_d[7:0].
+Removed top 1 bits (of 4) from wire dinorun.$5\vga_red_d[3:0].
+Removed top 24 bits (of 32) from wire dinorun.$sub$synth/yosys_common/build/rtl.sv2v.v:863$523_Y.
+Removed top 1 bits (of 10) from wire dinorun.pixel_y.
+Removed top 31 bits (of 32) from port B of cell score_counter.$add$synth/yosys_common/build/rtl.sv2v.v:458$251 ($add).
+Removed top 28 bits (of 32) from port Y of cell score_counter.$add$synth/yosys_common/build/rtl.sv2v.v:458$251 ($add).
+Removed top 31 bits (of 32) from port B of cell score_counter.$add$synth/yosys_common/build/rtl.sv2v.v:464$253 ($add).
+Removed top 28 bits (of 32) from port Y of cell score_counter.$add$synth/yosys_common/build/rtl.sv2v.v:464$253 ($add).
+Removed top 31 bits (of 32) from port B of cell score_counter.$add$synth/yosys_common/build/rtl.sv2v.v:468$255 ($add).
+Removed top 28 bits (of 32) from port Y of cell score_counter.$add$synth/yosys_common/build/rtl.sv2v.v:468$255 ($add).
+Removed top 31 bits (of 32) from port B of cell score_counter.$add$synth/yosys_common/build/rtl.sv2v.v:472$257 ($add).
+Removed top 28 bits (of 32) from port Y of cell score_counter.$add$synth/yosys_common/build/rtl.sv2v.v:472$257 ($add).
+Removed top 28 bits (of 32) from wire score_counter.$add$synth/yosys_common/build/rtl.sv2v.v:458$251_Y.
+Removed top 28 bits (of 32) from wire score_counter.$add$synth/yosys_common/build/rtl.sv2v.v:468$255_Y.
+Removed top 28 bits (of 32) from port B of cell title.$div$synth/yosys_common/build/rtl.sv2v.v:338$197 ($div).
+Removed top 28 bits (of 32) from port B of cell title.$div$synth/yosys_common/build/rtl.sv2v.v:339$200 ($div).
+Removed top 29 address bits (of 32) from memory init port title.$meminit$\TITLE_MEM$synth/yosys_common/build/rtl.sv2v.v:0$206 (TITLE_MEM).
+Removed top 7 address bits (of 10) from memory read port title.$memrd$\TITLE_MEM$synth/yosys_common/build/rtl.sv2v.v:345$204 (TITLE_MEM).
+Removed top 28 bits (of 32) from port B of cell title.$ge$synth/yosys_common/build/rtl.sv2v.v:335$189 ($ge).
+Removed top 22 bits (of 32) from port B of cell title.$lt$synth/yosys_common/build/rtl.sv2v.v:335$190 ($lt).
+Removed top 25 bits (of 32) from port B of cell title.$ge$synth/yosys_common/build/rtl.sv2v.v:336$192 ($ge).
+Removed top 24 bits (of 32) from port B of cell title.$lt$synth/yosys_common/build/rtl.sv2v.v:336$193 ($lt).
+Removed top 28 bits (of 32) from port B of cell title.$sub$synth/yosys_common/build/rtl.sv2v.v:338$196 ($sub).
+Removed top 21 bits (of 32) from port Y of cell title.$sub$synth/yosys_common/build/rtl.sv2v.v:338$196 ($sub).
+Removed top 26 bits (of 32) from port A of cell title.$sub$synth/yosys_common/build/rtl.sv2v.v:338$198 ($sub).
+Removed top 22 bits (of 32) from port Y of cell title.$sub$synth/yosys_common/build/rtl.sv2v.v:338$198 ($sub).
+Removed top 22 bits (of 32) from port B of cell title.$sub$synth/yosys_common/build/rtl.sv2v.v:338$198 ($sub).
+Removed top 25 bits (of 32) from port B of cell title.$sub$synth/yosys_common/build/rtl.sv2v.v:339$199 ($sub).
+Removed top 21 bits (of 32) from port Y of cell title.$sub$synth/yosys_common/build/rtl.sv2v.v:339$199 ($sub).
+Removed top 31 bits (of 32) from port B of cell vga_timer.$add$synth/yosys_common/build/rtl.sv2v.v:397$217 ($add).
+Removed top 21 bits (of 32) from port Y of cell vga_timer.$add$synth/yosys_common/build/rtl.sv2v.v:397$217 ($add).
+Removed top 22 bits (of 32) from mux cell vga_timer.$ternary$synth/yosys_common/build/rtl.sv2v.v:397$218 ($mux).
+Removed top 31 bits (of 32) from port B of cell vga_timer.$add$synth/yosys_common/build/rtl.sv2v.v:398$221 ($add).
+Removed top 21 bits (of 32) from port Y of cell vga_timer.$add$synth/yosys_common/build/rtl.sv2v.v:398$221 ($add).
+Removed top 21 bits (of 32) from mux cell vga_timer.$ternary$synth/yosys_common/build/rtl.sv2v.v:398$222 ($mux).
+Removed top 22 bits (of 32) from mux cell vga_timer.$ternary$synth/yosys_common/build/rtl.sv2v.v:398$224 ($mux).
+Removed top 22 bits (of 32) from port B of cell vga_timer.$lt$synth/yosys_common/build/rtl.sv2v.v:401$225 ($lt).
+Removed top 23 bits (of 32) from port B of cell vga_timer.$lt$synth/yosys_common/build/rtl.sv2v.v:402$227 ($lt).
+Removed top 22 bits (of 32) from port A of cell vga_timer.$le$synth/yosys_common/build/rtl.sv2v.v:404$230 ($le).
+Removed top 22 bits (of 32) from port B of cell vga_timer.$lt$synth/yosys_common/build/rtl.sv2v.v:404$231 ($lt).
+Removed top 23 bits (of 32) from port A of cell vga_timer.$le$synth/yosys_common/build/rtl.sv2v.v:405$235 ($le).
+Removed top 23 bits (of 32) from port B of cell vga_timer.$lt$synth/yosys_common/build/rtl.sv2v.v:405$236 ($lt).
+Removed top 1 bits (of 11) from port Y of cell vga_timer.$add$synth/yosys_common/build/rtl.sv2v.v:397$217 ($add).
+Removed top 1 bits (of 11) from mux cell vga_timer.$ternary$synth/yosys_common/build/rtl.sv2v.v:398$222 ($mux).
+Removed top 1 bits (of 11) from port Y of cell vga_timer.$add$synth/yosys_common/build/rtl.sv2v.v:398$221 ($add).
+Removed top 22 bits (of 32) from wire vga_timer.$add$synth/yosys_common/build/rtl.sv2v.v:397$217_Y.
+Removed top 22 bits (of 32) from wire vga_timer.$ternary$synth/yosys_common/build/rtl.sv2v.v:398$222_Y.
+
+2.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \basys3_7seg_driver..
+Finding unused cells or wires in module \bird..
+Finding unused cells or wires in module \cactus..
+Finding unused cells or wires in module \clk_100M_to_clk_1k..
+Finding unused cells or wires in module \dino..
+Finding unused cells or wires in module \dinorun..
+Finding unused cells or wires in module \edge_detector..
+Finding unused cells or wires in module \hex7seg..
+Finding unused cells or wires in module \lfsr16..
+Finding unused cells or wires in module \score_counter..
+Finding unused cells or wires in module \synchronizer..
+Finding unused cells or wires in module \title..
+Finding unused cells or wires in module \vga_timer..
+Removed 0 unused cells and 28 unused wires.
+<suppressed ~9 debug messages>
+
+2.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.11. Executing OPT pass (performing simple optimizations).
+
+2.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module basys3_7seg_driver.
+Optimizing module bird.
+Optimizing module cactus.
+Optimizing module clk_100M_to_clk_1k.
+Optimizing module dino.
+Optimizing module dinorun.
+Optimizing module edge_detector.
+Optimizing module hex7seg.
+Optimizing module lfsr16.
+Optimizing module score_counter.
+Optimizing module synchronizer.
+Optimizing module title.
+Optimizing module vga_timer.
+
+2.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\basys3_7seg_driver'.
+Finding identical cells in module `\bird'.
+Finding identical cells in module `\cactus'.
+Finding identical cells in module `\clk_100M_to_clk_1k'.
+Finding identical cells in module `\dino'.
+Finding identical cells in module `\dinorun'.
+Finding identical cells in module `\edge_detector'.
+Finding identical cells in module `\hex7seg'.
+Finding identical cells in module `\lfsr16'.
+Finding identical cells in module `\score_counter'.
+Finding identical cells in module `\synchronizer'.
+Finding identical cells in module `\title'.
+Finding identical cells in module `\vga_timer'.
+Removed a total of 0 cells.
+
+2.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \basys3_7seg_driver..
+Finding unused cells or wires in module \bird..
+Finding unused cells or wires in module \cactus..
+Finding unused cells or wires in module \clk_100M_to_clk_1k..
+Finding unused cells or wires in module \dino..
+Finding unused cells or wires in module \dinorun..
+Finding unused cells or wires in module \edge_detector..
+Finding unused cells or wires in module \hex7seg..
+Finding unused cells or wires in module \lfsr16..
+Finding unused cells or wires in module \score_counter..
+Finding unused cells or wires in module \synchronizer..
+Finding unused cells or wires in module \title..
+Finding unused cells or wires in module \vga_timer..
+
+2.11.4. Finished fast OPT passes.
+
+2.12. Printing statistics.
+
+=== basys3_7seg_driver ===
+
+   Number of wires:                 32
+   Number of wire bits:             96
+   Number of public wires:          18
+   Number of public wire bits:      50
+   Number of ports:                 12
+   Number of port bits:             33
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 24
+     $add                            1
+     $dff                            1
+     $eq                             3
+     $logic_not                      1
+     $mux                            2
+     $not                            5
+     $pmux                           6
+     $reduce_or                      4
+     hex7seg                         1
+
+=== bird ===
+
+   Number of wires:                 58
+   Number of wire bits:            477
+   Number of public wires:          23
+   Number of public wire bits:     114
+   Number of ports:                  8
+   Number of port bits:             27
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 49
+     $add                            3
+     $dff                            4
+     $div                            2
+     $eq                             4
+     $ge                             2
+     $le                             1
+     $logic_and                      3
+     $logic_not                      2
+     $lt                             2
+     $mem_v2                         2
+     $mux                           15
+     $not                            1
+     $pmux                           2
+     $shiftx                         2
+     $sub                            4
+
+=== cactus ===
+
+   Number of wires:                 48
+   Number of wire bits:            362
+   Number of public wires:          19
+   Number of public wire bits:      78
+   Number of ports:                  8
+   Number of port bits:             27
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 39
+     $add                            1
+     $dff                            2
+     $div                            2
+     $eq                             3
+     $ge                             2
+     $le                             1
+     $logic_and                      3
+     $logic_not                      1
+     $lt                             2
+     $mem_v2                         4
+     $mux                            9
+     $pmux                           1
+     $shiftx                         4
+     $sub                            4
+
+=== clk_100M_to_clk_1k ===
+
+   Number of wires:                  8
+   Number of wire bits:             59
+   Number of public wires:           6
+   Number of public wire bits:      40
+   Number of ports:                  2
+   Number of port bits:              2
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  6
+     $add                            1
+     $dff                            2
+     $eq                             1
+     $gt                             1
+     $mux                            1
+
+=== dino ===
+
+   Number of wires:                 70
+   Number of wire bits:            809
+   Number of public wires:          24
+   Number of public wire bits:     114
+   Number of ports:                  9
+   Number of port bits:             27
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 60
+     $add                            4
+     $dff                            4
+     $div                            2
+     $eq                             1
+     $ge                             4
+     $logic_and                      4
+     $logic_not                      1
+     $lt                             2
+     $mem_v2                         6
+     $mux                           23
+     $shiftx                         6
+     $sub                            3
+
+=== dinorun ===
+
+   Number of wires:                 96
+   Number of wire bits:            275
+   Number of public wires:          54
+   Number of public wire bits:     141
+   Number of ports:                 18
+   Number of port bits:             39
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 75
+     $dff                            8
+     $eq                             5
+     $logic_and                      8
+     $logic_not                      4
+     $logic_or                       5
+     $lt                             1
+     $mux                           28
+     $ne                             1
+     $pmux                           3
+     $reduce_or                      2
+     $sub                            1
+     bird                            1
+     cactus                          2
+     dino                            1
+     edge_detector                   1
+     lfsr16                          1
+     score_counter                   1
+     title                           1
+     vga_timer                       1
+
+=== edge_detector ===
+
+   Number of wires:                  7
+   Number of wire bits:              7
+   Number of public wires:           6
+   Number of public wire bits:       6
+   Number of ports:                  3
+   Number of port bits:              3
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  4
+     $dff                            2
+     $logic_and                      1
+     $logic_not                      1
+
+=== hex7seg ===
+
+   Number of wires:                 72
+   Number of wire bits:             72
+   Number of public wires:          11
+   Number of public wire bits:      11
+   Number of ports:                 11
+   Number of port bits:             11
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 68
+     $and                           29
+     $logic_not                      9
+     $not                            4
+     $or                            26
+
+=== lfsr16 ===
+
+   Number of wires:                  8
+   Number of wire bits:             83
+   Number of public wires:           6
+   Number of public wire bits:      51
+   Number of ports:                  4
+   Number of port bits:             19
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  4
+     $dff                            1
+     $mux                            2
+     $reduce_xor                     1
+
+=== score_counter ===
+
+   Number of wires:                 33
+   Number of wire bits:            167
+   Number of public wires:          16
+   Number of public wire bits:      52
+   Number of ports:                  7
+   Number of port bits:             19
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 25
+     $add                            4
+     $dff                            4
+     $eq                             3
+     $mux                           14
+
+=== synchronizer ===
+
+   Number of wires:                 17
+   Number of wire bits:             60
+   Number of public wires:          12
+   Number of public wire bits:      55
+   Number of ports:                  4
+   Number of port bits:             10
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 13
+     $dff                            3
+     $logic_and                      1
+     $logic_not                      1
+     $logic_or                       4
+     $mux                            4
+
+=== title ===
+
+   Number of wires:                 19
+   Number of wire bits:            225
+   Number of public wires:           9
+   Number of public wire bits:      45
+   Number of ports:                  3
+   Number of port bits:             21
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 15
+     $div                            2
+     $ge                             2
+     $logic_and                      3
+     $lt                             2
+     $mem_v2                         1
+     $mux                            1
+     $shiftx                         1
+     $sub                            3
+
+=== vga_timer ===
+
+   Number of wires:                 33
+   Number of wire bits:            192
+   Number of public wires:          15
+   Number of public wire bits:      85
+   Number of ports:                  7
+   Number of port bits:             24
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 27
+     $add                            2
+     $and                            1
+     $dff                            2
+     $eq                             2
+     $le                             2
+     $logic_and                      6
+     $lt                             4
+     $mux                            5
+     $ne                             1
+     $not                            2
+
+2.13. Executing CHECK pass (checking for obvious problems).
+Checking module basys3_7seg_driver...
+Checking module bird...
+Checking module cactus...
+Checking module clk_100M_to_clk_1k...
+Checking module dino...
+Checking module dinorun...
+Checking module edge_detector...
+Checking module hex7seg...
+Checking module lfsr16...
+Checking module score_counter...
+Checking module synchronizer...
+Checking module title...
+Checking module vga_timer...
+Found and reported 0 problems.
+
+3. Executing OPT pass (performing simple optimizations).
+
+3.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module basys3_7seg_driver.
+Optimizing module bird.
+<suppressed ~4 debug messages>
+Optimizing module cactus.
+<suppressed ~4 debug messages>
+Optimizing module clk_100M_to_clk_1k.
+Optimizing module dino.
+<suppressed ~4 debug messages>
+Optimizing module dinorun.
+Optimizing module edge_detector.
+Optimizing module hex7seg.
+Optimizing module lfsr16.
+Optimizing module score_counter.
+Optimizing module synchronizer.
+Optimizing module title.
+Optimizing module vga_timer.
+
+3.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\basys3_7seg_driver'.
+Finding identical cells in module `\bird'.
+Finding identical cells in module `\cactus'.
+Finding identical cells in module `\clk_100M_to_clk_1k'.
+Finding identical cells in module `\dino'.
+Finding identical cells in module `\dinorun'.
+Finding identical cells in module `\edge_detector'.
+Finding identical cells in module `\hex7seg'.
+Finding identical cells in module `\lfsr16'.
+Finding identical cells in module `\score_counter'.
+Finding identical cells in module `\synchronizer'.
+Finding identical cells in module `\title'.
+Finding identical cells in module `\vga_timer'.
+Removed a total of 0 cells.
+
+3.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \basys3_7seg_driver..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \bird..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \cactus..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \clk_100M_to_clk_1k..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \dino..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \dinorun..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \edge_detector..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \hex7seg..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \lfsr16..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \score_counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \synchronizer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \title..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \vga_timer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~48 debug messages>
+
+3.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \basys3_7seg_driver.
+  Optimizing cells in module \bird.
+  Optimizing cells in module \cactus.
+  Optimizing cells in module \clk_100M_to_clk_1k.
+  Optimizing cells in module \dino.
+  Optimizing cells in module \dinorun.
+  Optimizing cells in module \edge_detector.
+  Optimizing cells in module \hex7seg.
+  Optimizing cells in module \lfsr16.
+  Optimizing cells in module \score_counter.
+  Optimizing cells in module \synchronizer.
+  Optimizing cells in module \title.
+  Optimizing cells in module \vga_timer.
+Performed a total of 0 changes.
+
+3.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\basys3_7seg_driver'.
+Finding identical cells in module `\bird'.
+Finding identical cells in module `\cactus'.
+Finding identical cells in module `\clk_100M_to_clk_1k'.
+Finding identical cells in module `\dino'.
+Finding identical cells in module `\dinorun'.
+Finding identical cells in module `\edge_detector'.
+Finding identical cells in module `\hex7seg'.
+Finding identical cells in module `\lfsr16'.
+Finding identical cells in module `\score_counter'.
+Finding identical cells in module `\synchronizer'.
+Finding identical cells in module `\title'.
+Finding identical cells in module `\vga_timer'.
+Removed a total of 0 cells.
+
+3.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$1361 ($dff) from module basys3_7seg_driver (D = \counter_d, Q = \counter_q, rval = 2'00).
+Adding SRST signal on $procdff$1383 ($dff) from module bird (D = \bird_flap_up_d, Q = \bird_flap_up_q, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$1413 ($sdff) from module bird (D = $logic_not$synth/yosys_common/build/rtl.sv2v.v:64$9_Y, Q = \bird_flap_up_q).
+Adding SRST signal on $procdff$1382 ($dff) from module bird (D = \bird_flap_counter_d, Q = \bird_flap_counter_q, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:266:slice$1417 ($sdff) from module bird (D = $2\bird_flap_counter_d[7:0], Q = \bird_flap_counter_q).
+Adding SRST signal on $procdff$1381 ($dff) from module bird (D = \bird_y_d, Q = \bird_y_q, rval = 11'00000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1419 ($sdff) from module bird (D = $4\bird_y_d[10:0], Q = \bird_y_q).
+Adding SRST signal on $procdff$1380 ($dff) from module bird (D = \bird_x_d, Q = \bird_x_q, rval = 11'11111010110).
+Adding EN signal on $auto$ff.cc:266:slice$1423 ($sdff) from module bird (D = $2\bird_x_d[10:0], Q = \bird_x_q).
+Adding SRST signal on $procdff$1379 ($dff) from module cactus (D = \cactus_image_d, Q = \cactus_image_q, rval = 2'00).
+Adding EN signal on $auto$ff.cc:266:slice$1429 ($sdff) from module cactus (D = \rand_i, Q = \cactus_image_q).
+Adding SRST signal on $procdff$1378 ($dff) from module cactus (D = \cactus_x_d, Q = \cactus_x_q, rval = 11'11111100010).
+Adding EN signal on $auto$ff.cc:266:slice$1433 ($sdff) from module cactus (D = $2\cactus_x_d[10:0], Q = \cactus_x_q).
+Adding SRST signal on $procdff$1360 ($dff) from module clk_100M_to_clk_1k (D = $add$synth/yosys_common/build/rtl.sv2v.v:676$487_Y, Q = \counter_q, rval = 18'000000000000000000).
+Adding SRST signal on $procdff$1377 ($dff) from module dino (D = $procmux$1127_Y, Q = \dino_left_q, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$1440 ($sdff) from module dino (D = $logic_not$synth/yosys_common/build/rtl.sv2v.v:270$108_Y, Q = \dino_left_q).
+Adding SRST signal on $procdff$1376 ($dff) from module dino (D = $procmux$1132_Y, Q = \dino_step_counter_q, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:266:slice$1444 ($sdff) from module dino (D = \dino_step_counter_d, Q = \dino_step_counter_q).
+Adding SRST signal on $procdff$1375 ($dff) from module dino (D = $procmux$1137_Y, Q = \dino_yv_q, rval = 11'00000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1446 ($sdff) from module dino (D = $3\dino_yv_d[10:0], Q = \dino_yv_q).
+Adding SRST signal on $procdff$1374 ($dff) from module dino (D = $procmux$1142_Y, Q = \dino_yp_q, rval = 11'00101100101).
+Adding EN signal on $auto$ff.cc:266:slice$1452 ($sdff) from module dino (D = $2\dino_yp_d[10:0], Q = \dino_yp_q).
+Adding SRST signal on $procdff$1358 ($dff) from module dinorun (D = \flashing_timer_d, Q = \flashing_timer_q, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:266:slice$1458 ($sdff) from module dinorun (D = \flashing_timer_d, Q = \flashing_timer_q).
+Adding SRST signal on $procdff$1357 ($dff) from module dinorun (D = \state_d, Q = \state_q, rval = 2'00).
+Adding EN signal on $auto$ff.cc:266:slice$1462 ($sdff) from module dinorun (D = \state_d, Q = \state_q).
+Adding SRST signal on $procdff$1353 ($dff) from module dinorun (D = $3\vga_green_d[3:0] [2:0], Q = \vga_green_q [2:0], rval = 3'000).
+Adding SRST signal on $procdff$1353 ($dff) from module dinorun (D = $4\vga_green_d[3:0] [3], Q = \vga_green_q [3], rval = 1'0).
+Adding SRST signal on $procdff$1352 ($dff) from module dinorun (D = $3\vga_blue_d[3:0], Q = \vga_blue_q, rval = 4'1111).
+Adding SRST signal on $procdff$1351 ($dff) from module dinorun (D = $5\vga_red_d[3:0] [2], Q = \vga_red_q [2], rval = 1'0).
+Adding SRST signal on $procdff$1351 ($dff) from module dinorun (D = { $2\vga_red_d[3:0] [3] $2\vga_red_d[3:0] [1:0] }, Q = { \vga_red_q [3] \vga_red_q [1:0] }, rval = 3'111).
+Adding SRST signal on $procdff$1365 ($dff) from module lfsr16 (D = $procmux$775_Y, Q = \rand_q, rval = 16'0000000000000001).
+Adding EN signal on $auto$ff.cc:266:slice$1489 ($sdff) from module lfsr16 (D = { \rand_q [14:0] \rand_d [0] }, Q = \rand_q).
+Adding SRST signal on $procdff$1369 ($dff) from module score_counter (D = $procmux$780_Y, Q = \digit3_q, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:266:slice$1491 ($sdff) from module score_counter (D = $add$synth/yosys_common/build/rtl.sv2v.v:472$257_Y [3:0], Q = \digit3_q).
+Adding SRST signal on $procdff$1368 ($dff) from module score_counter (D = $procmux$785_Y, Q = \digit2_q, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:266:slice$1495 ($sdff) from module score_counter (D = \digit2_d, Q = \digit2_q).
+Adding SRST signal on $procdff$1367 ($dff) from module score_counter (D = $procmux$790_Y, Q = \digit1_q, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:266:slice$1497 ($sdff) from module score_counter (D = \digit1_d, Q = \digit1_q).
+Adding SRST signal on $procdff$1366 ($dff) from module score_counter (D = $procmux$795_Y, Q = \digit0_q, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:266:slice$1499 ($sdff) from module score_counter (D = \digit0_d, Q = \digit0_q).
+Adding EN signal on $procdff$1362 ($dff) from module synchronizer (D = \async_data_i [0], Q = \sync_data_q [0]).
+Adding EN signal on $procdff$1362 ($dff) from module synchronizer (D = \async_data_i [1], Q = \sync_data_q [1]).
+Adding EN signal on $procdff$1362 ($dff) from module synchronizer (D = \async_data_i [2], Q = \sync_data_q [2]).
+Adding EN signal on $procdff$1362 ($dff) from module synchronizer (D = \async_data_i [3], Q = \sync_data_q [3]).
+Adding SRST signal on $procdff$1371 ($dff) from module vga_timer (D = \y_counter_d, Q = \y_counter_q, rval = 10'0111101100).
+Adding EN signal on $auto$ff.cc:266:slice$1505 ($sdff) from module vga_timer (D = $auto$wreduce.cc:461:run$1411 [9:0], Q = \y_counter_q).
+Adding SRST signal on $procdff$1370 ($dff) from module vga_timer (D = { \x_counter_d [9] \x_counter_d [7:4] }, Q = { \x_counter_q [9] \x_counter_q [7:4] }, rval = 5'11111).
+Adding SRST signal on $procdff$1370 ($dff) from module vga_timer (D = { $add$synth/yosys_common/build/rtl.sv2v.v:397$217_Y [8] $add$synth/yosys_common/build/rtl.sv2v.v:397$217_Y [3:0] }, Q = { \x_counter_q [8] \x_counter_q [3:0] }, rval = 5'00000).
+
+3.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \basys3_7seg_driver..
+Finding unused cells or wires in module \bird..
+Finding unused cells or wires in module \cactus..
+Finding unused cells or wires in module \clk_100M_to_clk_1k..
+Finding unused cells or wires in module \dino..
+Finding unused cells or wires in module \dinorun..
+Finding unused cells or wires in module \edge_detector..
+Finding unused cells or wires in module \hex7seg..
+Finding unused cells or wires in module \lfsr16..
+Finding unused cells or wires in module \score_counter..
+Finding unused cells or wires in module \synchronizer..
+Finding unused cells or wires in module \title..
+Finding unused cells or wires in module \vga_timer..
+Removed 55 unused cells and 55 unused wires.
+<suppressed ~79 debug messages>
+
+3.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module basys3_7seg_driver.
+Optimizing module bird.
+Optimizing module cactus.
+Optimizing module clk_100M_to_clk_1k.
+Optimizing module dino.
+Optimizing module dinorun.
+Optimizing module edge_detector.
+Optimizing module hex7seg.
+Optimizing module lfsr16.
+Optimizing module score_counter.
+Optimizing module synchronizer.
+Optimizing module title.
+Optimizing module vga_timer.
+
+3.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \basys3_7seg_driver..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \bird..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \cactus..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \clk_100M_to_clk_1k..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \dino..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \dinorun..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \edge_detector..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \hex7seg..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \lfsr16..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \score_counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \synchronizer..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \title..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \vga_timer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~38 debug messages>
+
+3.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \basys3_7seg_driver.
+  Optimizing cells in module \bird.
+  Optimizing cells in module \cactus.
+  Optimizing cells in module \clk_100M_to_clk_1k.
+  Optimizing cells in module \dino.
+  Optimizing cells in module \dinorun.
+  Optimizing cells in module \edge_detector.
+  Optimizing cells in module \hex7seg.
+  Optimizing cells in module \lfsr16.
+  Optimizing cells in module \score_counter.
+  Optimizing cells in module \synchronizer.
+  Optimizing cells in module \title.
+  Optimizing cells in module \vga_timer.
+Performed a total of 0 changes.
+
+3.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\basys3_7seg_driver'.
+Finding identical cells in module `\bird'.
+Finding identical cells in module `\cactus'.
+Finding identical cells in module `\clk_100M_to_clk_1k'.
+Finding identical cells in module `\dino'.
+<suppressed ~6 debug messages>
+Finding identical cells in module `\dinorun'.
+<suppressed ~6 debug messages>
+Finding identical cells in module `\edge_detector'.
+Finding identical cells in module `\hex7seg'.
+Finding identical cells in module `\lfsr16'.
+Finding identical cells in module `\score_counter'.
+Finding identical cells in module `\synchronizer'.
+Finding identical cells in module `\title'.
+Finding identical cells in module `\vga_timer'.
+Removed a total of 4 cells.
+
+3.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \basys3_7seg_driver..
+Finding unused cells or wires in module \bird..
+Finding unused cells or wires in module \cactus..
+Finding unused cells or wires in module \clk_100M_to_clk_1k..
+Finding unused cells or wires in module \dino..
+Finding unused cells or wires in module \dinorun..
+Finding unused cells or wires in module \edge_detector..
+Finding unused cells or wires in module \hex7seg..
+Finding unused cells or wires in module \lfsr16..
+Finding unused cells or wires in module \score_counter..
+Finding unused cells or wires in module \synchronizer..
+Finding unused cells or wires in module \title..
+Finding unused cells or wires in module \vga_timer..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~2 debug messages>
+
+3.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module basys3_7seg_driver.
+Optimizing module bird.
+Optimizing module cactus.
+Optimizing module clk_100M_to_clk_1k.
+Optimizing module dino.
+Optimizing module dinorun.
+Optimizing module edge_detector.
+Optimizing module hex7seg.
+Optimizing module lfsr16.
+Optimizing module score_counter.
+Optimizing module synchronizer.
+Optimizing module title.
+Optimizing module vga_timer.
+
+3.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \basys3_7seg_driver..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \bird..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \cactus..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \clk_100M_to_clk_1k..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \dino..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \dinorun..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \edge_detector..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \hex7seg..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \lfsr16..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \score_counter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \synchronizer..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \title..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \vga_timer..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~38 debug messages>
+
+3.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \basys3_7seg_driver.
+  Optimizing cells in module \bird.
+  Optimizing cells in module \cactus.
+  Optimizing cells in module \clk_100M_to_clk_1k.
+  Optimizing cells in module \dino.
+  Optimizing cells in module \dinorun.
+  Optimizing cells in module \edge_detector.
+  Optimizing cells in module \hex7seg.
+  Optimizing cells in module \lfsr16.
+  Optimizing cells in module \score_counter.
+  Optimizing cells in module \synchronizer.
+  Optimizing cells in module \title.
+  Optimizing cells in module \vga_timer.
+Performed a total of 0 changes.
+
+3.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\basys3_7seg_driver'.
+Finding identical cells in module `\bird'.
+Finding identical cells in module `\cactus'.
+Finding identical cells in module `\clk_100M_to_clk_1k'.
+Finding identical cells in module `\dino'.
+Finding identical cells in module `\dinorun'.
+Finding identical cells in module `\edge_detector'.
+Finding identical cells in module `\hex7seg'.
+Finding identical cells in module `\lfsr16'.
+Finding identical cells in module `\score_counter'.
+Finding identical cells in module `\synchronizer'.
+Finding identical cells in module `\title'.
+Finding identical cells in module `\vga_timer'.
+Removed a total of 0 cells.
+
+3.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \basys3_7seg_driver..
+Finding unused cells or wires in module \bird..
+Finding unused cells or wires in module \cactus..
+Finding unused cells or wires in module \clk_100M_to_clk_1k..
+Finding unused cells or wires in module \dino..
+Finding unused cells or wires in module \dinorun..
+Finding unused cells or wires in module \edge_detector..
+Finding unused cells or wires in module \hex7seg..
+Finding unused cells or wires in module \lfsr16..
+Finding unused cells or wires in module \score_counter..
+Finding unused cells or wires in module \synchronizer..
+Finding unused cells or wires in module \title..
+Finding unused cells or wires in module \vga_timer..
+
+3.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module basys3_7seg_driver.
+Optimizing module bird.
+Optimizing module cactus.
+Optimizing module clk_100M_to_clk_1k.
+Optimizing module dino.
+Optimizing module dinorun.
+Optimizing module edge_detector.
+Optimizing module hex7seg.
+Optimizing module lfsr16.
+Optimizing module score_counter.
+Optimizing module synchronizer.
+Optimizing module title.
+Optimizing module vga_timer.
+
+3.23. Finished OPT passes. (There is nothing left to do.)
+
+4. Printing statistics.
+
+=== basys3_7seg_driver ===
+
+   Number of wires:                 31
+   Number of wire bits:             94
+   Number of public wires:          18
+   Number of public wire bits:      50
+   Number of ports:                 12
+   Number of port bits:             33
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 23
+     $add                            1
+     $eq                             3
+     $logic_not                      1
+     $mux                            1
+     $not                            5
+     $pmux                           6
+     $reduce_or                      4
+     $sdff                           1
+     hex7seg                         1
+
+=== bird ===
+
+   Number of wires:                 51
+   Number of wire bits:            396
+   Number of public wires:          19
+   Number of public wire bits:      83
+   Number of ports:                  8
+   Number of port bits:             27
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 40
+     $add                            3
+     $eq                             4
+     $ge                             2
+     $le                             1
+     $logic_and                      3
+     $logic_not                      2
+     $lt                             2
+     $mem_v2                         2
+     $mux                            4
+     $ne                             1
+     $not                            1
+     $pmux                           2
+     $reduce_and                     3
+     $sdffe                          4
+     $shiftx                         2
+     $sub                            4
+
+=== cactus ===
+
+   Number of wires:                 44
+   Number of wire bits:            303
+   Number of public wires:          17
+   Number of public wire bits:      65
+   Number of ports:                  8
+   Number of port bits:             27
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 34
+     $add                            1
+     $eq                             3
+     $ge                             2
+     $le                             1
+     $logic_and                      3
+     $logic_not                      1
+     $lt                             2
+     $mem_v2                         4
+     $mux                            3
+     $ne                             1
+     $pmux                           1
+     $reduce_and                     2
+     $sdffe                          2
+     $shiftx                         4
+     $sub                            4
+
+=== clk_100M_to_clk_1k ===
+
+   Number of wires:                  7
+   Number of wire bits:             41
+   Number of public wires:           5
+   Number of public wire bits:      22
+   Number of ports:                  2
+   Number of port bits:              2
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  5
+     $add                            1
+     $dff                            1
+     $eq                             1
+     $gt                             1
+     $sdff                           1
+
+=== dino ===
+
+   Number of wires:                 60
+   Number of wire bits:            663
+   Number of public wires:          21
+   Number of public wire bits:      91
+   Number of ports:                  9
+   Number of port bits:             27
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 50
+     $add                            4
+     $eq                             1
+     $ge                             4
+     $logic_and                      4
+     $logic_not                      1
+     $lt                             2
+     $mem_v2                         6
+     $mux                           12
+     $not                            1
+     $reduce_and                     2
+     $sdffe                          4
+     $shiftx                         6
+     $sub                            3
+
+=== dinorun ===
+
+   Number of wires:                 98
+   Number of wire bits:            254
+   Number of public wires:          51
+   Number of public wire bits:     129
+   Number of ports:                 18
+   Number of port bits:             39
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 79
+     $dff                            3
+     $eq                             5
+     $logic_and                      8
+     $logic_not                      4
+     $logic_or                       5
+     $lt                             1
+     $mux                           21
+     $ne                             6
+     $pmux                           3
+     $reduce_and                     1
+     $reduce_or                      5
+     $sdff                           5
+     $sdffe                          2
+     $sub                            1
+     bird                            1
+     cactus                          2
+     dino                            1
+     edge_detector                   1
+     lfsr16                          1
+     score_counter                   1
+     title                           1
+     vga_timer                       1
+
+=== edge_detector ===
+
+   Number of wires:                  7
+   Number of wire bits:              7
+   Number of public wires:           6
+   Number of public wire bits:       6
+   Number of ports:                  3
+   Number of port bits:              3
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  4
+     $dff                            2
+     $logic_and                      1
+     $logic_not                      1
+
+=== hex7seg ===
+
+   Number of wires:                 72
+   Number of wire bits:             72
+   Number of public wires:          11
+   Number of public wire bits:      11
+   Number of ports:                 11
+   Number of port bits:             11
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 68
+     $and                           29
+     $logic_not                      9
+     $not                            4
+     $or                            26
+
+=== lfsr16 ===
+
+   Number of wires:                  6
+   Number of wire bits:             51
+   Number of public wires:           6
+   Number of public wire bits:      51
+   Number of ports:                  4
+   Number of port bits:             19
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  2
+     $reduce_xor                     1
+     $sdffe                          1
+
+=== score_counter ===
+
+   Number of wires:                 25
+   Number of wire bits:            132
+   Number of public wires:          15
+   Number of public wire bits:      48
+   Number of ports:                  7
+   Number of port bits:             19
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 17
+     $add                            4
+     $eq                             3
+     $mux                            5
+     $reduce_and                     1
+     $sdffe                          4
+
+=== synchronizer ===
+
+   Number of wires:                 16
+   Number of wire bits:             56
+   Number of public wires:          11
+   Number of public wire bits:      51
+   Number of ports:                  4
+   Number of port bits:             10
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 12
+     $dff                            2
+     $dffe                           4
+     $logic_and                      1
+     $logic_not                      1
+     $logic_or                       4
+
+=== title ===
+
+   Number of wires:                 19
+   Number of wire bits:            225
+   Number of public wires:           9
+   Number of public wire bits:      45
+   Number of ports:                  3
+   Number of port bits:             21
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 15
+     $div                            2
+     $ge                             2
+     $logic_and                      3
+     $lt                             2
+     $mem_v2                         1
+     $mux                            1
+     $shiftx                         1
+     $sub                            3
+
+=== vga_timer ===
+
+   Number of wires:                 32
+   Number of wire bits:            164
+   Number of public wires:          14
+   Number of public wire bits:      75
+   Number of ports:                  7
+   Number of port bits:             24
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 27
+     $add                            2
+     $and                            1
+     $eq                             2
+     $le                             2
+     $logic_and                      6
+     $lt                             4
+     $mux                            2
+     $ne                             1
+     $not                            3
+     $reduce_or                      1
+     $sdff                           2
+     $sdffe                          1
+
+5. Executing Verilog backend.
+Dumping module `\basys3_7seg_driver'.
+Dumping module `\bird'.
+Dumping module `\cactus'.
+Dumping module `\clk_100M_to_clk_1k'.
+Dumping module `\dino'.
+Dumping module `\dinorun'.
+Dumping module `\edge_detector'.
+Dumping module `\hex7seg'.
+Dumping module `\lfsr16'.
+Dumping module `\score_counter'.
+Dumping module `\synchronizer'.
+Dumping module `\title'.
+Dumping module `\vga_timer'.
+
+Warnings: 1 unique messages, 1 total
+End of script. Logfile hash: 4c3e7e5a11, CPU: user 0.35s system 0.02s, MEM: 22.24 MB peak
+Yosys 0.47+86 (git sha1 b89bd027a, clang++ 18.1.8 -fPIC -O3)
+Time spent: 23% 10x opt_expr (0 sec), 17% 8x opt_clean (0 sec), ...
