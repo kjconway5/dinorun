@@ -1,61 +1,49 @@
-🦖 Dino Run
+🦖 Dino Run – FPGA-Based Real-Time Game
 
-A state-machine-based game implemented in SystemVerilog and deployed on the Basys3 FPGA Board. 
-The game mimics the classic Dino Run where the player controls a dinosaur to jump or duck obstacles.
+Dino Run is a real-time, VGA-rendered game implemented in SystemVerilog and deployed on the Basys3 FPGA Board. This project highlights expertise 
+in digital design, finite state machines (FSMs), and hardware-software integration.
 
-🎯 Goals
-	• Implement a state machine to control game behavior.
-	• Connect and integrate multiple modules:
-	• Random Number Generator
-	• Edge Detector
-	• VGA Timer
-	• Score Counter
-	• 7-Segment Display Driver
-	• Display game visuals using the VGA output.
+📌 Overview
+	• Designed and implemented a hardware-accelerated game inspired by the classic Dino Run.
+	• Utilized finite state machines to manage gameplay states such as title screen, running, collision, and reset.
+	• Rendered game visuals (dino, obstacles, score) in real-time using VGA output.
+	• Integrated hardware controls via Basys3 pushbuttons for user interaction (jump, duck, reset).
 
-📋 Table of Contents
-	1. Project Overview
-	2. Features
-	3. Hardware Requirements
-	4. Setup Instructions
-	5. Code Structure
-	6. State Machine
-	7. Testing and Simulation
-	8. Resources
+🛠️ Key Contributions
+	1.Finite State Machine (FSM) Design
+		• Implemented a modular FSM for game state transitions, ensuring smooth gameplay flow.
+		• States included TITLE_SCREEN, RUNNING, COLLISION, and RESET.
+	2. Random Obstacle Generation
+		• Developed a 16-bit Linear Feedback Shift Register (LFSR) to pseudo-randomly spawn obstacles with varying attributes (height, type).
+	3. VGA Graphics Rendering
+		• Designed a VGA timing generator to synchronize the display at 640x480 resolution.
+		• Rendered animated sprites (dino, obstacles, ground) and a dynamic score counter.
+	4. Hardware Integration
+		• Programmed the Basys3 FPGA to handle user inputs for gameplay via pushbuttons.
+		• Incorporated a 7-segment display driver for real-time score display.
+	5. Verification and Deployment
+		• Verified module functionality using comprehensive SystemVerilog testbenches.
+		• Synthesized the design and programmed it onto the Basys3 FPGA for demonstration.
 
-🚀 Project Overview
+🚀 Technical Details
+	• Language: SystemVerilog
+	• Tools: Xilinx Vivado Design Suite
+	• Hardware: Basys3 FPGA (Xilinx Artix-7), VGA-compatible display
 
-Dino Run is a SystemVerilog-based game for the Basys3 FPGA. The player controls a dinosaur on the 
-VGA display to avoid obstacles like cacti and birds. Game events include jumping, ducking, scoring, 
-and game-over detection.
+Key Features:
+	• Random obstacle generation using LFSR.
+	• VGA-rendered game visuals with real-time updates.
+	• Robust state management with a clean FSM architecture.
+	• Modular design for independent testing and simulation.
 
-Gameplay:
-	1. Start Game: Press btnC to start the game.
-	2. Jump: Press btnU to make the dino jump.
-	3. Duck: Press btnD to make the dino duck.
-	4. Reset: Press btnR to reset the game.
+🎓 Skills Demonstrated
+	• FPGA Design: Proficient in designing, simulating, and synthesizing SystemVerilog modules.
+	• Digital Logic Design: Developed FSMs, VGA controllers, and LFSR-based randomness.
+	• Hardware-Software Integration: Delivered a functional game system with user input and real-time rendering.
 
-The game features:
-	• Animated dino with jump/duck states.
-	• Randomly spawning obstacles (cacti and birds).
-	• Score counter that increments over time.
-	• Title screen and collision handling.
-
-🌟 Features
-	• Title Screen: Static title image displayed before the game starts.
-	• Obstacle Management: Random spawn intervals using a 16-bit LFSR.
-	• State Machine: Ensures smooth transitions between game states:
-	• Visuals: VGA display output
-	• Score display (7-segment output).
-
-🛠️ Hardware Requirements
-	• Basys3 FPGA Board (Xilinx Artix-7)
-	• Vivado Design Suite for synthesis and simulation
-	• VGA-compatible display
-
-📁 Code Structure
-# all the files I worked on
-dino-run/
+📁 Project Structure   	       # all the files I worked on
+	
+dinorun/
 ├── rtl/                       # SystemVerilog RTL files
 │   ├── dinorun_pkg.sv         # State definitions
 │   ├── dinorun.sv             # Top-level Dino Run module
